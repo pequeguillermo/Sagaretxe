@@ -1,0 +1,12 @@
+# Project metadata files
+project.md
+.proyecto
+
+# Environment variables
+.env
+.env.local
+
+# Logs and cache
+*.log
+/vendor/
+/scratch/

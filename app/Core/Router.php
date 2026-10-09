@@ -1,0 +1,59 @@
+<?php
+namespace App\Core;
+
+class Router {
+    private array $routes = [];
+
+    public function get(string $path, $handler): void {
+        $this->routes['GET'][$this->normalizePath($path)] = $handler;
+    }
+
+    public function post(string $path, $handler): void {
+        $this->routes['POST'][$this->normalizePath($path)] = $handler;
+    }
+
+    private function normalizePath(string $path): string {
+        $path = trim($path, '/');
+        return $path === '' ? '/' : '/' . $path;
+    }
+
+    public function dispatch(): void {
+        $method = $_SERVER['REQUEST_METHOD'] ?? 'GET';
+        if ($method === 'HEAD') {
+            $method = 'GET';
+        }
+        $uri = $_SERVER['REQUEST_URI'] ?? '/';
+
+        // Eliminar query string si existe
+        if (false !== $pos = strpos($uri, '?')) {
+            $uri = substr($uri, 0, $pos);
+        }
+
+        // Quitar la ruta base si se ejecuta en un subdirectorio (ej. /Sagaretxe/public)
+        $scriptName = dirname($_SERVER['SCRIPT_NAME'] ?? '');
+        if ($scriptName !== '/' && $scriptName !== '\\' && strpos($uri, $scriptName) === 0) {
+            $uri = substr($uri, strlen($scriptName));
+        }
+
+        $uri = $this->normalizePath($uri);
+
+        $handler = $this->routes[$method][$uri] ?? null;
+
+        if (!$handler) {
+            http_response_code(404);
+            View::render('pages/404', [
+                'title' => 'Página no encontrada – Sagaretxe',
+                'metaDescription' => 'La página que busca no existe.'
+            ]);
+            return;
+        }
+
+        if (is_array($handler)) {
+            [$class, $action] = $handler;
+            $controller = new $class();
+            $controller->$action();
+        } elseif (is_callable($handler)) {
+            call_user_func($handler);
+        }
+    }
+}
