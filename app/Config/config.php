@@ -11,6 +11,12 @@ $host = $_SERVER['HTTP_HOST'] ?? 'localhost:8000';
 $scriptName = $_SERVER['SCRIPT_NAME'] ?? '';
 $baseDir = dirname($scriptName);
 $baseDir = ($baseDir === '/' || $baseDir === '\\') ? '' : rtrim($baseDir, '/\\');
+
+// Si baseDir termina en /public, nunca debe exponerse en las URLs canónicas públicas
+if (preg_match('#/public$#i', $baseDir)) {
+    $parentDir = dirname($baseDir);
+    $baseDir = ($parentDir === '/' || $parentDir === '\\') ? '' : rtrim($parentDir, '/\\');
+}
 define('BASE_URL', $protocol . $host . $baseDir);
 
 // Configuración de API de Reservas y Club (app-central)

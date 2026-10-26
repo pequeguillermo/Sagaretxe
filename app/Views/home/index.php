@@ -1,106 +1,128 @@
 <!-- ==========================================================================
      SAGARETXE – PORTADA PRINCIPAL (INSPIRADA EN LA ESTÉTICA DE RESTAURANTE LANA)
-     Dark Luxury, Tipografía Editorial Cormorant Garamond & Cortes Nobles a la Brasa
+     Marco Editorial Cuadrado Alrededor del Fuego Central & Barra de Reserva Exclusiva
      ========================================================================== -->
 
-<!-- 1. HERO ATMOSFÉRICO DE ALTO IMPACTO (FUEGO, BRASA Y SIDRA) -->
-<section class="hero-cinematic-lana">
-    <div class="hero-bg-overlay"></div>
-    <!-- Partículas Dinámicas de Brasa (Chispas de Carbón de Encina) -->
-    <div class="hero-embers" aria-hidden="true">
-        <span class="ember ember-1"></span>
-        <span class="ember ember-2"></span>
-        <span class="ember ember-3"></span>
-        <span class="ember ember-4"></span>
-        <span class="ember ember-5"></span>
-        <span class="ember ember-6"></span>
+<!-- 1. HERO ATMOSFÉRICO: MARCO EDITORIAL ALREDEDOR DEL FUEGO CENTRAL -->
+<section class="hero-cinematic-lana hero-frame-mode" id="heroSection">
+    
+    <!-- Centro Visual / Escenario Panorámico para Video de Carne a la Brasa -->
+    <div class="hero-center-stage">
+        <video class="hero-center-video" autoplay loop muted playsinline poster="<?= BASE_URL ?>/assets/images/hero-impacto.jpg">
+            <source src="<?= BASE_URL ?>/assets/videos/carne-brasa.mp4" type="video/mp4">
+            <source src="<?= BASE_URL ?>/assets/videos/carne-brasa.webm" type="video/webm">
+        </video>
+        <!-- Viñeta radial e iluminación dramática para fundir el fuego con el marco negro -->
+        <div class="hero-center-vignette"></div>
+        <!-- Partículas Dinámicas de Brasa (Chispas de Carbón de Encina que flotan sobre el fuego) -->
+        <div class="hero-embers" aria-hidden="true">
+            <span class="ember ember-1"></span>
+            <span class="ember ember-2"></span>
+            <span class="ember ember-3"></span>
+            <span class="ember ember-4"></span>
+            <span class="ember ember-5"></span>
+            <span class="ember ember-6"></span>
+        </div>
     </div>
-    <div class="container hero-lana-inner">
-        <!-- Distintivo de Origen y Tradición (Estilo Lana) -->
-        <div class="hero-badge-lana">
-            <span class="hero-badge-line"></span>
-            <span class="hero-badge-text"><?= __('hero_badge') ?></span>
-            <span class="hero-badge-line"></span>
+
+    <!-- Contenedor del Marco Cuadrado (Bordes Perimetrales Verticales y Horizontales) -->
+    <div class="hero-frame-container">
+        
+        <!-- Esquinas Doradas del Cuadrado (Acentos de Galería de Arte) -->
+        <div class="hero-frame-corners" aria-hidden="true">
+            <span class="corner-bracket corner-tl"></span>
+            <span class="corner-bracket corner-tr"></span>
+            <span class="corner-bracket corner-bl"></span>
+            <span class="corner-bracket corner-br"></span>
         </div>
 
-        <!-- Título Principal Editorial -->
-        <h1 class="hero-title-lana">
-            <?= __('hero_title') ?>
-        </h1>
-
-        <!-- Subtítulo Poético / Origen Chamberí -->
-        <p class="hero-desc-lana">
-            <?= __('hero_subtitle') ?>
-        </p>
-
-        <!-- Barra de Reserva Inmediata del Asador (Minimalista Lana) -->
-        <div class="hero-booking-wrapper-lana">
-            <form action="<?= langUrl('/reservas') ?>" method="GET" class="hero-booking-bar-lana">
-                <!-- Pelota de luz brillante que recorre el perímetro del borde -->
-                <div class="booking-border-orb" aria-hidden="true"></div>
-
-                <div class="booking-col-lana">
-                    <label for="bookingComensales">
-                        <i class="fa-solid fa-users"></i> <?= __('book_diners') ?>
-                    </label>
-                    <select name="personas" id="bookingComensales" required>
-                        <option value="2">2 <?= isEn() ? 'Guests' : 'personas (Mesa íntima)' ?></option>
-                        <option value="3">3 <?= isEn() ? 'Guests' : 'personas' ?></option>
-                        <option value="4" selected>4 <?= isEn() ? 'Guests (Standard)' : 'personas (Mesa habitual)' ?></option>
-                        <option value="5">5 <?= isEn() ? 'Guests' : 'personas' ?></option>
-                        <option value="6">6 <?= isEn() ? 'Guests' : 'personas (Mesa amplia)' ?></option>
-                        <option value="8">8+ <?= isEn() ? 'Guests (Group)' : 'personas (Grupos)' ?></option>
-                    </select>
-                </div>
-
-                <div class="booking-col-lana">
-                    <label for="bookingFecha">
-                        <i class="fa-solid fa-calendar-day"></i> <?= __('book_date') ?>
-                    </label>
-                    <input type="date" name="fecha" id="bookingFecha" value="<?= date('Y-m-d') ?>" min="<?= date('Y-m-d') ?>" required>
-                </div>
-
-                <div class="booking-col-lana">
-                    <label for="bookingTurno">
-                        <i class="fa-solid fa-clock"></i> <?= __('book_shift') ?>
-                    </label>
-                    <select name="turno" id="bookingTurno">
-                        <option value="almuerzo" selected><?= __('book_lunch') ?></option>
-                        <option value="cena"><?= __('book_dinner') ?></option>
-                    </select>
-                </div>
-
-                <div class="booking-col-lana-btn">
-                    <button type="submit" class="btn-lana-submit">
-                        <span><?= __('book_submit') ?></span>
-                        <i class="fa-solid fa-arrow-right"></i>
-                    </button>
-                </div>
-            </form>
+        <!-- Borde Superior Horizontal -->
+        <div class="hero-edge-top">
+            <div class="edge-line"></div>
+            <div class="edge-text-group">
+                <span class="edge-tag"><?= __('hero_badge') ?></span>
+                <span class="edge-bullet">◆</span>
+                <span class="edge-tag-origin"><?= __('hero_badge_origin') ?></span>
+            </div>
+            <div class="edge-line"></div>
         </div>
 
-        <!-- Sellos de Autenticidad -->
-        <div class="hero-seals-row-lana">
-            <div class="hero-seal-item">
-                <i class="fa-solid fa-fire-flame-curved"></i>
-                <span><?= __('hero_badge_grill') ?></span>
+        <!-- Borde Lateral Izquierdo Vertical (Texto Orientado) -->
+        <aside class="hero-edge-left" aria-label="Tradición de Brasa">
+            <div class="edge-line-vert"></div>
+            <div class="edge-vert-content">
+                <span class="vert-text"><?= __('hero_badge_grill') ?></span>
+                <span class="vert-bullet">◆</span>
+                <span class="vert-text"><?= isEn() ? 'Aged Prime Beef · Tableside Weighing' : 'Carne Seleccionada · Pesaje en Sala' ?></span>
             </div>
-            <div class="hero-seal-sep">·</div>
-            <div class="hero-seal-item">
-                <i class="fa-solid fa-wine-bottle"></i>
-                <span><?= __('hero_badge_cider') ?></span>
+            <div class="edge-line-vert"></div>
+        </aside>
+
+        <!-- Borde Lateral Derecho Vertical (Texto Orientado) -->
+        <aside class="hero-edge-right" aria-label="Sidrería y Pintxos">
+            <div class="edge-line-vert"></div>
+            <div class="edge-vert-content">
+                <span class="vert-text"><?= __('hero_badge_cider') ?></span>
+                <span class="vert-bullet">◆</span>
+                <span class="vert-text"><?= __('hero_badge_pintxos') ?></span>
             </div>
-            <div class="hero-seal-sep">·</div>
-            <div class="hero-seal-item">
-                <i class="fa-solid fa-utensils"></i>
-                <span><?= __('hero_badge_pintxos') ?></span>
+            <div class="edge-line-vert"></div>
+        </aside>
+
+        <!-- Borde Inferior Horizontal: Título Sutil + Barra de Reserva Inmediata -->
+        <div class="hero-edge-bottom">
+            <!-- Título editorial que corona la base del marco -->
+            <div class="hero-bottom-heading">
+                <h1 class="hero-frame-headline"><?= __('hero_title') ?></h1>
             </div>
-            <div class="hero-seal-sep">·</div>
-            <div class="hero-seal-item">
-                <i class="fa-solid fa-award"></i>
-                <span><?= __('hero_badge_origin') ?></span>
+
+            <!-- Solo lo de Reservas (Barra Flotante Lana con Pelota de Luz) -->
+            <div class="hero-booking-wrapper-lana">
+                <form action="<?= langUrl('/reservas') ?>" method="GET" class="hero-booking-bar-lana">
+                    <!-- Pelota de luz brillante que recorre el perímetro del borde -->
+                    <div class="booking-border-orb" aria-hidden="true"></div>
+
+                    <div class="booking-col-lana">
+                        <label for="bookingComensales">
+                            <i class="fa-solid fa-users"></i> <?= __('book_diners') ?>
+                        </label>
+                        <select name="personas" id="bookingComensales" required>
+                            <option value="2">2 <?= isEn() ? 'Guests' : 'personas (Mesa íntima)' ?></option>
+                            <option value="3">3 <?= isEn() ? 'Guests' : 'personas' ?></option>
+                            <option value="4" selected>4 <?= isEn() ? 'Guests (Standard)' : 'personas (Mesa habitual)' ?></option>
+                            <option value="5">5 <?= isEn() ? 'Guests' : 'personas' ?></option>
+                            <option value="6">6 <?= isEn() ? 'Guests' : 'personas (Mesa amplia)' ?></option>
+                            <option value="8">8+ <?= isEn() ? 'Guests (Group)' : 'personas (Grupos)' ?></option>
+                        </select>
+                    </div>
+
+                    <div class="booking-col-lana">
+                        <label for="bookingFecha">
+                            <i class="fa-solid fa-calendar-day"></i> <?= __('book_date') ?>
+                        </label>
+                        <input type="date" name="fecha" id="bookingFecha" value="<?= date('Y-m-d') ?>" min="<?= date('Y-m-d') ?>" required>
+                    </div>
+
+                    <div class="booking-col-lana">
+                        <label for="bookingTurno">
+                            <i class="fa-solid fa-clock"></i> <?= __('book_shift') ?>
+                        </label>
+                        <select name="turno" id="bookingTurno">
+                            <option value="almuerzo" selected><?= __('book_lunch') ?></option>
+                            <option value="cena"><?= __('book_dinner') ?></option>
+                        </select>
+                    </div>
+
+                    <div class="booking-col-lana-btn">
+                        <button type="submit" class="btn-lana-submit">
+                            <span><?= __('book_submit') ?></span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </form>
             </div>
         </div>
+
     </div>
 </section>
 

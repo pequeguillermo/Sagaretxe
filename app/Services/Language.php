@@ -68,6 +68,13 @@ class Language {
         $lang = $targetLang ?? self::$currentLang;
         $path = '/' . ltrim($path, '/');
 
+        // Limpieza de cualquier prefijo /public accidental
+        if (strpos($path, '/public/') === 0) {
+            $path = substr($path, 7);
+        } elseif ($path === '/public') {
+            $path = '/';
+        }
+
         // Mapeo semántico de rutas si aplica
         if ($lang === 'en') {
             if ($path === '/' || $path === '') {
@@ -106,6 +113,11 @@ class Language {
 
         $cleanUri = trim($cleanUri, '/');
         $parts = explode('/', $cleanUri);
+
+        // Si empieza por public, removerlo
+        if (!empty($parts[0]) && strtolower($parts[0]) === 'public') {
+            array_shift($parts);
+        }
 
         if (!empty($parts[0]) && strtolower($parts[0]) === 'en') {
             array_shift($parts);

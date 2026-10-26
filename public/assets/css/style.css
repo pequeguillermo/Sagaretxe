@@ -3359,7 +3359,7 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 0.84rem;
 }
 
-/* 3. Hero Atmosférico Lana */
+/* 3. Hero Atmosférico Lana – Modo Marco Editorial Cuadrado */
 .hero-cinematic-lana {
     position: relative;
     min-height: 88vh;
@@ -3369,6 +3369,278 @@ h1, h2, h3, h4, h5, h6 {
     background: #08090b url('../images/hero-impacto.jpg') center center / cover no-repeat;
     padding: 100px 0 80px 0;
     overflow: hidden;
+}
+
+.hero-cinematic-lana.hero-frame-mode {
+    min-height: calc(100vh - 80px);
+    background: #060709;
+    padding: 30px 0 25px 0;
+}
+
+/* Escenario Central para Video de Carne a la Brasa (Centro Libre) */
+.hero-center-stage {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    overflow: hidden;
+    background: #08090b;
+}
+
+.hero-center-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+    filter: brightness(0.82) contrast(1.12) saturate(1.08);
+    pointer-events: none;
+}
+
+.hero-center-vignette {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    pointer-events: none;
+    background: 
+        radial-gradient(ellipse at center, rgba(6, 7, 9, 0.15) 0%, rgba(6, 7, 9, 0.62) 60%, rgba(6, 7, 9, 0.98) 100%),
+        linear-gradient(180deg, rgba(6, 7, 9, 0.85) 0%, transparent 15%, transparent 70%, rgba(6, 7, 9, 0.98) 100%);
+}
+
+/* Marco Cuadrado Editorial (Perímetro alrededor del centro libre) */
+.hero-frame-container {
+    position: relative;
+    z-index: 10;
+    width: calc(100% - 48px);
+    max-width: 1440px;
+    min-height: calc(100vh - 140px);
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    pointer-events: none;
+    padding: 24px 32px 18px 32px;
+    box-sizing: border-box;
+}
+
+/* Esquinas de galería de arte (Corchetes dorados) */
+.hero-frame-corners {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+}
+
+.corner-bracket {
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    border-color: var(--gold-lana);
+    border-style: solid;
+    opacity: 0.65;
+    transition: all 0.3s ease;
+}
+
+.corner-tl {
+    top: 0;
+    left: 0;
+    border-width: 1px 0 0 1px;
+}
+
+.corner-tr {
+    top: 0;
+    right: 0;
+    border-width: 1px 1px 0 0;
+}
+
+.corner-bl {
+    bottom: 0;
+    left: 0;
+    border-width: 0 0 1px 1px;
+}
+
+.corner-br {
+    bottom: 0;
+    right: 0;
+    border-width: 0 1px 1px 0;
+}
+
+/* Borde Superior Horizontal */
+.hero-edge-top {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: 18px;
+    pointer-events: auto;
+    padding: 0 10px;
+}
+
+.hero-edge-top .edge-line {
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(196, 162, 118, 0.25) 30%, rgba(196, 162, 118, 0.55) 100%);
+}
+
+.hero-edge-top .edge-line:last-child {
+    background: linear-gradient(90deg, rgba(196, 162, 118, 0.55) 0%, rgba(196, 162, 118, 0.25) 70%, transparent 100%);
+}
+
+.edge-text-group {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    white-space: nowrap;
+}
+
+.edge-tag,
+.edge-tag-origin {
+    font-family: var(--font-sans);
+    font-size: 0.74rem;
+    font-weight: 600;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--gold-lana);
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.9);
+}
+
+.edge-bullet {
+    color: var(--gold-lana);
+    font-size: 0.48rem;
+    opacity: 0.75;
+}
+
+/* Bordes Laterales Verticales */
+.hero-edge-left,
+.hero-edge-right {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    pointer-events: auto;
+    z-index: 10;
+}
+
+.hero-edge-left {
+    left: 8px;
+}
+
+.hero-edge-right {
+    right: 8px;
+}
+
+.edge-line-vert {
+    width: 1px;
+    height: 70px;
+    background: linear-gradient(180deg, transparent, rgba(196, 162, 118, 0.45) 50%, transparent);
+}
+
+.edge-vert-content {
+    font-family: var(--font-sans);
+    font-size: 0.70rem;
+    font-weight: 600;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: rgba(223, 196, 158, 0.88);
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.95);
+}
+
+.hero-edge-left .edge-vert-content {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+}
+
+.hero-edge-right .edge-vert-content {
+    writing-mode: vertical-rl;
+}
+
+.vert-bullet {
+    color: var(--gold-lana);
+    font-size: 0.45rem;
+    opacity: 0.7;
+}
+
+/* Borde Inferior Horizontal (Título Sutil + Solo Reservas) */
+.hero-edge-bottom {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    pointer-events: auto;
+    margin-top: auto;
+    padding-top: 24px;
+    z-index: 10;
+}
+
+.hero-bottom-heading {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.hero-frame-headline {
+    font-family: var(--font-serif);
+    font-size: clamp(1.8rem, 3.4vw, 2.9rem);
+    font-weight: 400;
+    line-height: 1.15;
+    color: #ffffff;
+    letter-spacing: -0.01em;
+    margin: 0;
+    text-shadow: 0 4px 28px rgba(0, 0, 0, 0.95);
+}
+
+@media (max-width: 1024px) {
+    .hero-edge-left,
+    .hero-edge-right {
+        display: none;
+    }
+    .hero-frame-container {
+        width: calc(100% - 24px);
+        padding: 16px 12px 16px 12px;
+        min-height: calc(100vh - 160px);
+    }
+    .corner-bracket {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-cinematic-lana.hero-frame-mode {
+        min-height: auto;
+        padding: 24px 0 40px 0;
+    }
+    .hero-frame-container {
+        min-height: auto;
+        gap: 32px;
+    }
+    .hero-edge-top {
+        flex-direction: column;
+        gap: 8px;
+    }
+    .hero-edge-top .edge-line {
+        display: none;
+    }
+    .edge-text-group {
+        flex-wrap: wrap;
+        justify-content: center;
+        text-align: center;
+        font-size: 0.68rem;
+    }
+    .hero-frame-headline {
+        font-size: 1.6rem;
+    }
 }
 
 .hero-bg-overlay {

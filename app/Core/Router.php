@@ -29,6 +29,15 @@ class Router {
             $uri = substr($uri, 0, $pos);
         }
 
+        // Si la URL pública solicitada incluye /public, redirigir 301 de inmediato a la ruta canónica limpia
+        if ($uri === '/public' || strpos($uri, '/public/') === 0) {
+            $cleanUri = substr($uri, 7);
+            $cleanUri = $cleanUri === '' ? '/' : $cleanUri;
+            $queryString = !empty($_SERVER['QUERY_STRING']) ? '?' . $_SERVER['QUERY_STRING'] : '';
+            header('Location: ' . BASE_URL . $cleanUri . $queryString, true, 301);
+            exit;
+        }
+
         // Quitar la ruta base si se ejecuta en un subdirectorio (ej. /Sagaretxe/public)
         $scriptName = dirname($_SERVER['SCRIPT_NAME'] ?? '');
         if ($scriptName !== '/' && $scriptName !== '\\' && strpos($uri, $scriptName) === 0) {

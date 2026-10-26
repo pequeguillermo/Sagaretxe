@@ -4,19 +4,23 @@ DirectoryIndex index.php
     RewriteEngine On
     RewriteBase /
 
-    # 1. Si el archivo solicitado existe en public/assets, servirlo
+    # 1. Redirigir 301 de forma canónica si el navegador entra a /public o /public/...
+    RewriteCond %{THE_REQUEST} \s/+public/([^\s?]*) [NC]
+    RewriteRule ^public/(.*)$ /%1 [R=301,L,NE]
+
+    # 2. Servir recursos estáticos desde public/assets directamente
     RewriteRule ^assets/(.*)$ public/assets/$1 [L]
 
-    # 2. Si el archivo o directorio existe tal cual, servirlo
+    # 3. Si el archivo o directorio existe tal cual en la raíz, servirlo
     RewriteCond %{REQUEST_FILENAME} -f [OR]
     RewriteCond %{REQUEST_FILENAME} -d
     RewriteRule ^ - [L]
 
-    # 3. Si el archivo existe dentro de public/, servirlo
+    # 4. Si el archivo o recurso existe dentro de public/, servirlo
     RewriteCond %{DOCUMENT_ROOT}/public/$1 -f [OR]
     RewriteCond %{DOCUMENT_ROOT}/public/$1 -d
     RewriteRule ^(.*)$ public/$1 [L]
 
-    # 4. Enrutar todas las peticiones dinámicas al controlador frontal
+    # 5. Enrutar todas las peticiones dinámicas al controlador frontal
     RewriteRule ^(.*)$ public/index.php [QSA,L]
 </IfModule>
