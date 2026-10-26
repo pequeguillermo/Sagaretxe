@@ -215,5 +215,26 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     initBookingBorderOrb();
+
+    // 7. Aparición con Efecto Chulo de los Botones Flotantes en Móvil al hacer Scroll
+    function initFloatingDocksOnScroll() {
+        const actionsDock = document.getElementById('floatingActionsDock');
+        const langDock = document.getElementById('floatingLangDock');
+
+        if (!actionsDock && !langDock) return;
+
+        function updateDocks() {
+            // Se muestran suavemente al hacer scroll hacia abajo (> 70px)
+            const isScrolled = window.scrollY > 70;
+            if (actionsDock) actionsDock.classList.toggle('dock-visible', isScrolled);
+            if (langDock) langDock.classList.toggle('dock-visible', isScrolled);
+        }
+
+        window.addEventListener('scroll', updateDocks, { passive: true });
+        updateDocks(); // Evaluar posición actual al cargar la página
+    }
+
+    initFloatingDocksOnScroll();
 });
+
 

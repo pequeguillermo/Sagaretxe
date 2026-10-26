@@ -219,15 +219,9 @@
         <!-- Resplandor basal de las brasas incandescentes -->
         <div class="cuts-embers-bed"></div>
         
-        <!-- Video Real de Ascuas de Parrillada y Carbón de Encina Incandescente -->
+        <!-- Video Real de Ascuas de Parrillada Widescreen Completo (Sin clonar, cubre todo el ancho) -->
         <div class="cuts-flames-video-wrap">
-            <video class="cuts-fire-video cuts-fire-left" autoplay loop muted playsinline poster="<?= BASE_URL ?>/assets/images/hero-impacto.jpg">
-                <source src="<?= BASE_URL ?>/assets/videos/ascuas-parrilla.mp4" type="video/mp4">
-            </video>
-            <video class="cuts-fire-video cuts-fire-center" autoplay loop muted playsinline poster="<?= BASE_URL ?>/assets/images/hero-impacto.jpg">
-                <source src="<?= BASE_URL ?>/assets/videos/ascuas-parrilla.mp4" type="video/mp4">
-            </video>
-            <video class="cuts-fire-video cuts-fire-right" autoplay loop muted playsinline poster="<?= BASE_URL ?>/assets/images/hero-impacto.jpg">
+            <video class="cuts-fire-video" autoplay loop muted playsinline poster="<?= BASE_URL ?>/assets/images/hero-impacto.jpg">
                 <source src="<?= BASE_URL ?>/assets/videos/ascuas-parrilla.mp4" type="video/mp4">
             </video>
         </div>

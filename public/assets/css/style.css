@@ -248,7 +248,7 @@ h1, h2, h3, h4, h5, h6 {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 80px;
+    height: 84px;
 }
 
 /* Brand Logo */
@@ -264,9 +264,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .site-logo-img {
-    height: 52px;
+    height: 62px;
     width: auto;
-    max-width: 220px;
+    max-width: 265px;
     object-fit: contain;
     display: block;
     filter: drop-shadow(0 2px 10px rgba(0, 0, 0, 0.5));
@@ -3646,6 +3646,15 @@ h1, h2, h3, h4, h5, h6 {
     .top-bar {
         padding: 6px 0;
     }
+    .top-bar-inner {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        width: 100%;
+    }
+    .top-bar-actions {
+        margin-left: auto;
+    }
     .top-bar-item {
         font-size: 0.68rem;
     }
@@ -3653,14 +3662,14 @@ h1, h2, h3, h4, h5, h6 {
         display: none; /* Oculta la dirección larga en móvil para que no se amontone */
     }
     .main-header {
-        height: 60px;
+        height: 68px;
     }
     .header-inner {
-        height: 60px;
-        padding: 0 12px;
+        height: 68px;
+        padding: 0 14px;
     }
     .site-logo-img {
-        max-height: 32px;
+        max-height: 44px;
         width: auto;
     }
     .header-actions {
@@ -3694,9 +3703,10 @@ h1, h2, h3, h4, h5, h6 {
 
     /* 2. Hero Editorial en Móvil: El Video Central Queda 100% Libre y Despejado */
     .hero-cinematic-lana.hero-frame-mode {
-        min-height: 100svh;
-        min-height: 100vh;
-        padding: 10px 0 16px 0;
+        height: calc(100svh - 110px);
+        min-height: calc(100vh - 110px);
+        max-height: calc(100vh - 110px);
+        padding: 6px 0 10px 0;
         display: flex;
         align-items: stretch;
     }
@@ -3713,9 +3723,9 @@ h1, h2, h3, h4, h5, h6 {
 
     .hero-frame-container {
         width: 100%;
-        min-height: calc(100svh - 85px);
-        min-height: calc(100vh - 85px);
-        padding: 10px 14px 14px 14px;
+        height: 100%;
+        min-height: 100%;
+        padding: 6px 12px 8px 12px;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -3759,11 +3769,11 @@ h1, h2, h3, h4, h5, h6 {
         padding-top: 0;
         margin-top: auto;
         width: 100%;
-        padding-bottom: 78px;
+        padding-bottom: 8px;
     }
 
     .hero-bottom-heading {
-        margin-bottom: 12px;
+        margin-bottom: 8px;
     }
 
     .hero-mobile-subbadge {
@@ -4287,39 +4297,33 @@ h1, h2, h3, h4, h5, h6 {
     animation: brasaBreathe 4.5s ease-in-out infinite alternate;
 }
 
-/* Contenedor de Ascuas de Parrillada en Video con Máscara de Degradado */
+/* Contenedor de Ascuas de Parrillada en Video con Máscara de Degradado (Video Completo Sin Clonar) */
 .cuts-flames-video-wrap {
     position: absolute;
-    bottom: -15px;
-    left: -5%;
-    width: 110%;
-    height: 380px;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     overflow: hidden;
     pointer-events: none;
     z-index: 1;
     mix-blend-mode: screen;
-    -webkit-mask-image: linear-gradient(to top, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.92) 30%, rgba(0, 0, 0, 0.35) 65%, rgba(0, 0, 0, 0) 95%);
-    mask-image: linear-gradient(to top, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.92) 30%, rgba(0, 0, 0, 0.35) 65%, rgba(0, 0, 0, 0) 95%);
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
+    -webkit-mask-image: linear-gradient(to top, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.88) 25%, rgba(0, 0, 0, 0.35) 60%, rgba(0, 0, 0, 0) 92%);
+    mask-image: linear-gradient(to top, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.88) 25%, rgba(0, 0, 0, 0.35) 60%, rgba(0, 0, 0, 0) 92%);
     opacity: 0.95;
 }
 
 .cuts-fire-video {
-    flex: 1 1 34%;
-    min-width: 480px;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    min-width: 100%;
     height: 100%;
     object-fit: cover;
     object-position: center bottom;
-    filter: brightness(1.15) contrast(1.25) saturate(1.4);
-    margin: 0 -25px;
-    -webkit-mask-image: radial-gradient(ellipse 92% 95% at 50% 100%, black 50%, transparent 100%);
-    mask-image: radial-gradient(ellipse 92% 95% at 50% 100%, black 50%, transparent 100%);
-}
-
-.cuts-fire-video.cuts-fire-left {
-    transform: scaleX(-1);
+    filter: brightness(1.18) contrast(1.22) saturate(1.4);
 }
 
 /* Manto de degradado: las llamas se difuminan suavemente y NO llegan arriba */
@@ -5260,6 +5264,27 @@ h1, h2, h3, h4, h5, h6 {
         height: 160px;
         min-width: 0;
     }
+    /* En versión móvil: Docks flotantes ocultos inicialmente para que el Hero quede 100% libre */
+    .floating-actions-dock,
+    .floating-lang-dock {
+        opacity: 0 !important;
+        transform: translateY(42px) scale(0.92) !important;
+        pointer-events: none !important;
+        visibility: hidden !important;
+        transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
+                    transform 0.48s cubic-bezier(0.34, 1.56, 0.64, 1), 
+                    visibility 0.4s !important;
+    }
+
+    /* Al hacer scroll: entran con efecto elástico y sutil glow ("efecto chulo") */
+    .floating-actions-dock.dock-visible,
+    .floating-lang-dock.dock-visible {
+        opacity: 1 !important;
+        transform: translateY(0) scale(1) !important;
+        pointer-events: auto !important;
+        visibility: visible !important;
+    }
+
     .floating-lang-dock {
         bottom: 16px;
         left: 14px;
