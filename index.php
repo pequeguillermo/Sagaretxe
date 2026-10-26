@@ -1,4 +1,3 @@
 <?php
-// Redirección directa al directorio público para acceso vía Apache en localhost
-header('Location: ' . dirname($_SERVER['SCRIPT_NAME']) . '/public/');
-exit;
+// Arranque transparente para Apache / cPanel / Hosting compartido
+require_once __DIR__ . '/public/index.php';

@@ -37,6 +37,33 @@ class Router {
 
         $uri = $this->normalizePath($uri);
 
+        // Soporte bilingüe: Prefijo /en
+        if ($uri === '/en' || strpos($uri, '/en/') === 0) {
+            \App\Services\Language::setLang('en');
+            $uri = substr($uri, 3);
+            $uri = $this->normalizePath($uri);
+        } else {
+            // Si la ruta no tiene /en, aseguramos idioma español salvo que venga en sesión/parámetro
+            if (!isset($_GET['lang'])) {
+                \App\Services\Language::setLang('es');
+            }
+        }
+
+        // Aliases en inglés para URLs amigables
+        $englishAliases = [
+            '/menu' => '/carta',
+            '/about' => '/nosotros',
+            '/reservations' => '/reservas',
+            '/contact' => '/contacto',
+            '/group-menus' => '/menus',
+            '/gallery' => '/galeria',
+            '/events' => '/eventos'
+        ];
+
+        if (isset($englishAliases[$uri])) {
+            $uri = $englishAliases[$uri];
+        }
+
         $handler = $this->routes[$method][$uri] ?? null;
 
         if (!$handler) {

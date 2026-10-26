@@ -4,12 +4,21 @@
 
 <section class="section">
     <div class="container">
-        <div class="section-header">
-            <span class="section-tag">Nuestras Instalaciones y Platos</span>
-            <h1 class="section-title">Galería de <span>Fotos</span></h1>
-            <p class="section-description">
-                Un recorrido visual por el ambiente de nuestra sidrería en Chamberí, la espectacular barra de pintxos, nuestras kupelas de sidra natural y las carnes a la brasa al carbón de encina. Haz clic en cualquier imagen para verla en detalle.
+        <div class="section-header-lana">
+            <span class="section-subtag-lana"><?= isEn() ? 'VISUAL ARCHIVE' : 'NUESTRAS INSTALACIONES Y PLATOS' ?></span>
+            <h1 class="section-title-lana"><?= isEn() ? 'Photo Gallery' : 'Galería de Fotos' ?></h1>
+            <p class="section-description" style="max-width: 720px; margin: 0 auto 24px auto;">
+                <?= isEn() 
+                    ? 'A visual journey through the atmosphere of our Chamberí cider house, the artisan pintxos counter, open natural cider barrels, and holm oak ember meats.' 
+                    : 'Un recorrido visual por el ambiente de nuestra sidrería en Chamberí, la espectacular barra de pintxos, nuestras kupelas de sidra natural y las carnes a la brasa al carbón de encina.' ?>
             </p>
+            <div style="display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; margin-bottom: 24px;">
+                <a href="<?= langUrl('/reservas') ?>" class="btn-lana-reserve">
+                    <span class="btn-lana-dot"></span>
+                    <span><?= __('nav_reserve') ?></span>
+                </a>
+            </div>
+            <div class="gold-hairline-sep"></div>
         </div>
 
         <div class="gallery-grid">

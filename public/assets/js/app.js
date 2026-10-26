@@ -57,7 +57,10 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    const openFloatingPhoneBtn = document.getElementById('openFloatingPhoneModal');
+
     if (openPhoneBtn) openPhoneBtn.addEventListener('click', openPhone);
+    if (openFloatingPhoneBtn) openFloatingPhoneBtn.addEventListener('click', openPhone);
     if (closePhoneBtn) closePhoneBtn.addEventListener('click', closePhone);
     if (phoneModal) {
         phoneModal.addEventListener('click', (e) => {
@@ -152,4 +155,65 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+
+    // 7. Pelota brillante que recorre el borde de la reserva en la Home
+    function initBookingBorderOrb() {
+        const bar = document.querySelector('.hero-booking-bar-lana');
+        const orb = document.querySelector('.booking-border-orb');
+        if (!bar || !orb) return;
+
+        // Comprobar soporte nativo de CSS offset-path
+        const supportsOffset = window.CSS && CSS.supports && (
+            CSS.supports('offset-path', 'inset(0 round 4px)') || 
+            CSS.supports('offset-path', 'rect(0 0 0 0 round 4px)')
+        );
+
+        if (supportsOffset) {
+            return;
+        }
+
+        // Fallback matemático con velocidad lineal constante
+        let progress = 0;
+        const duration = 7500;
+        let lastTime = performance.now();
+
+        function animateOrb(now) {
+            const delta = now - lastTime;
+            lastTime = now;
+            progress = (progress + (delta / duration)) % 1;
+
+            const w = bar.offsetWidth;
+            const h = bar.offsetHeight;
+            const perimeter = 2 * (w + h);
+            const dist = progress * perimeter;
+
+            let x = 0;
+            let y = 0;
+
+            if (dist <= w) {
+                x = dist;
+                y = 0;
+            } else if (dist <= w + h) {
+                x = w;
+                y = dist - w;
+            } else if (dist <= 2 * w + h) {
+                x = w - (dist - (w + h));
+                y = h;
+            } else {
+                x = 0;
+                y = h - (dist - (2 * w + h));
+            }
+
+            orb.style.left = x + 'px';
+            orb.style.top = y + 'px';
+            orb.style.transform = 'translate(-50%, -50%)';
+
+            requestAnimationFrame(animateOrb);
+        }
+
+        requestAnimationFrame(animateOrb);
+    }
+
+    initBookingBorderOrb();
 });
+

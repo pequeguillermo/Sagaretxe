@@ -4,12 +4,32 @@
 
 <section class="section">
     <div class="container">
-        <div class="section-header">
-            <span class="section-tag">Cocina Vasca Tradicional</span>
-            <h1 class="section-title">Nuestra <span>Carta</span></h1>
-            <p class="section-description">
-                La calidad innegociable de la materia prima y el respeto a la tradición en la elaboración de cada receta son la firma de Sagaretxe. Carnes al carbón de encina, pescados de lonja y guisos con alma.
+        <div class="section-header-lana" style="margin-bottom: 35px;">
+            <span class="section-subtag-lana"><?= __('menu_page_tag') ?></span>
+            <h1 class="section-title-lana"><?= __('menu_page_title') ?></h1>
+            <p class="section-description" style="max-width: 720px; margin: 0 auto 24px auto;">
+                <?= __('menu_page_desc') ?>
             </p>
+            <div style="display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; margin-bottom: 30px;">
+                <a href="<?= BASE_URL ?>/assets/images/carta-sagaretxe.pdf" target="_blank" class="btn-lana-outline" onclick="window.print(); return false;" title="Imprimir / PDF">
+                    <i class="fa-solid fa-file-pdf" style="color: var(--gold-lana);"></i>
+                    <span><?= __('menu_pdf_download') ?></span>
+                </a>
+                <a href="<?= langUrl('/reservas') ?>" class="btn-lana-reserve">
+                    <span class="btn-lana-dot"></span>
+                    <span><?= __('nav_reserve') ?></span>
+                </a>
+            </div>
+            <div class="gold-hairline-sep"></div>
+        </div>
+
+        <!-- Barra Rápida de Navegación por Categorías (Estilo Lana) -->
+        <div class="menu-categories-nav-lana">
+            <a href="#entrantes" class="cat-pill-lana active"><?= isEn() ? 'Starters' : 'Entrantes' ?></a>
+            <a href="#ensaladas" class="cat-pill-lana"><?= isEn() ? 'Salads' : 'Ensaladas' ?></a>
+            <a href="#carnes" class="cat-pill-lana"><?= isEn() ? 'Charcoal Meats' : 'Carnes a la Brasa' ?></a>
+            <a href="#pescados" class="cat-pill-lana"><?= isEn() ? 'Fish & Seafood' : 'Pescados' ?></a>
+            <a href="#postres" class="cat-pill-lana"><?= isEn() ? 'Desserts' : 'Postres' ?></a>
         </div>
 
         <!-- 1. ENTRANTES -->

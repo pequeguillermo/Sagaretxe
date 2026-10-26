@@ -4,12 +4,21 @@
 
 <section class="section">
     <div class="container">
-        <div class="section-header">
-            <span class="section-tag">Celebraciones Inolvidables</span>
-            <h1 class="section-title">Organización de <span>Eventos</span></h1>
-            <p class="section-description">
-                El equipo de Sagaretxe te propone los mejores planes para tus comidas y celebraciones en Madrid: desde reuniones de empresa y aniversarios, hasta bautizos, comuniones y fiestas familiares en espacios privados.
+        <div class="section-header-lana">
+            <span class="section-subtag-lana"><?= isEn() ? 'PRIVATE EVENTS & CELEBRATIONS' : 'CELEBRACIONES INOLVIDABLES' ?></span>
+            <h1 class="section-title-lana"><?= isEn() ? 'Private Events' : 'Organización de Eventos' ?></h1>
+            <p class="section-description" style="max-width: 720px; margin: 0 auto 24px auto;">
+                <?= isEn() 
+                    ? 'Our team designs tailored experiences for corporate gatherings, private celebrations, family milestones, and anniversary dinners in exclusive dining rooms.' 
+                    : 'El equipo de Sagaretxe te propone los mejores planes para tus comidas y celebraciones en Madrid: desde reuniones de empresa y aniversarios, hasta celebraciones familiares en espacios privados.' ?>
             </p>
+            <div style="display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; margin-bottom: 24px;">
+                <a href="tel:+34914462588" class="btn-lana-outline">
+                    <i class="fa-solid fa-phone"></i>
+                    <span>914 46 25 88</span>
+                </a>
+            </div>
+            <div class="gold-hairline-sep"></div>
         </div>
 
         <div class="grid-2" style="align-items: start; margin-bottom: 60px;">

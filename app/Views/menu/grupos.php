@@ -4,23 +4,35 @@
 
 <section class="section">
     <div class="container">
-        <div class="section-header">
-            <span class="section-tag">Celebraciones y Cenas de Empresa</span>
-            <h1 class="section-title">Menús para <span>Grupos</span></h1>
-            <p class="section-description">
-                Confeccionados para brindar una experiencia gastronómica completa, abundante y festiva. Entrantes al centro de mesa, platos principales individuales a elegir, postres caseros, bodega selecta y sidra al txotx incluida.
+        <div class="section-header-lana">
+            <span class="section-subtag-lana"><?= isEn() ? 'CELEBRATIONS & CORPORATE DINNERS' : 'CELEBRACIONES Y CENAS DE EMPRESA' ?></span>
+            <h1 class="section-title-lana"><?= isEn() ? 'Group Menus' : 'Menús para Grupos' ?></h1>
+            <p class="section-description" style="max-width: 720px; margin: 0 auto 24px auto;">
+                <?= isEn() 
+                    ? 'Curated to deliver a complete, generous, and festive Basque experience. Shared appetizers at center table, choice of individual charcoal-grilled mains, artisan desserts, select cellar wines, and natural cider from the barrel included.' 
+                    : 'Confeccionados para brindar una experiencia gastronómica completa, abundante y festiva. Entrantes al centro de mesa, platos principales individuales a elegir, postres caseros, bodega selecta y sidra al txotx incluida.' ?>
             </p>
+            <div style="display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; margin-bottom: 24px;">
+                <a href="<?= langUrl('/eventos') ?>" class="btn-lana-reserve">
+                    <span class="btn-lana-dot"></span>
+                    <span><?= isEn() ? 'Request Event Quote' : 'Solicitar Presupuesto' ?></span>
+                </a>
+                <a href="tel:+34914462588" class="btn-lana-outline">
+                    <i class="fa-solid fa-phone"></i>
+                    <span>914 46 25 88</span>
+                </a>
+            </div>
+            <div class="gold-hairline-sep"></div>
         </div>
 
         <!-- Condiciones Generales de Reserva de Grupos -->
-        <div class="group-conditions-box">
-            <h3><i class="fa-solid fa-triangle-exclamation"></i> Muy Importante para la Reserva de Grupos</h3>
+        <div class="group-conditions-box" style="background: #12151b; border: 1px solid var(--border-accent); border-radius: var(--radius-sm);">
+            <h3 style="font-family: var(--font-serif); font-size: 1.35rem; color: var(--gold-lana);"><i class="fa-solid fa-triangle-exclamation"></i> <?= isEn() ? 'Important Guidelines for Group Reservations' : 'Muy Importante para la Reserva de Grupos' ?></h3>
             <ul>
-                <li><strong>Menús a Medida:</strong> Si deseas realizar alguna modificación o adaptar opciones para alérgenos o vegetarianos, consúltanos y confeccionaremos una propuesta personalizada.</li>
-                <li><strong>Antelación mínima:</strong> Se ruega que las reservas de grupos y la confirmación de menús se formalicen con un mínimo de <strong>10 días de antelación</strong>.</li>
-                <li><strong>Frescura de mercado:</strong> Los platos pueden sufrir ligeras variaciones según disponibilidad de lonja (especialmente en pescados salvajes). En tal caso, se sustituirán por opciones de categoría igual o superior sin coste adicional.</li>
-                <li><strong>Grupos +30 comensales:</strong> Confirmando los platos elegidos con 10 días de antelación se aplicará un <strong>descuento del 3%</strong> (válido en menús superiores a 41€ de domingo a jueves).</li>
-                <li><strong>Aviso especial (Noviembre y Diciembre):</strong> Las reservas para cenas de empresa y Navidad requieren el abono de una <strong>señal del 20% con al menos 15 días de antelación</strong> para quedar formalizadas debido a la altísima demanda.</li>
+                <li><strong><?= isEn() ? 'Tailored Menus:' : 'Menús a Medida:' ?></strong> <?= isEn() ? 'If you wish to modify courses or accommodate dietary allergies or vegetarian requests, reach out and we will personalize your menu.' : 'Si deseas realizar alguna modificación o adaptar opciones para alérgenos o vegetarianos, consúltanos y confeccionaremos una propuesta personalizada.' ?></li>
+                <li><strong><?= isEn() ? 'Notice period:' : 'Antelación mínima:' ?></strong> <?= isEn() ? 'Group bookings and menu choices should be confirmed at least 10 days in advance.' : 'Se ruega que las reservas de grupos y la confirmación de menús se formalicen con un mínimo de 10 días de antelación.' ?></li>
+                <li><strong><?= isEn() ? 'Market freshness:' : 'Frescura de mercado:' ?></strong> <?= isEn() ? 'Courses may vary slightly depending on fish market availability, replaced with equal or superior grade cuts.' : 'Los platos pueden sufrir ligeras variaciones según disponibilidad de lonja, sustituyéndose por opciones de categoría igual o superior.' ?></li>
+                <li><strong><?= isEn() ? 'Corporate & Holiday Dinners:' : 'Aviso especial (Noviembre y Diciembre):' ?></strong> <?= isEn() ? 'Christmas and end-of-year corporate dinners require a 20% advance booking deposit.' : 'Las reservas para cenas de empresa y Navidad requieren el abono de una señal del 20% para quedar formalizadas.' ?></li>
             </ul>
         </div>
 

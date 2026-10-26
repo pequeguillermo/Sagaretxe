@@ -10,3 +10,4 @@ project.md
 *.log
 /vendor/
 /scratch/
+*.zip

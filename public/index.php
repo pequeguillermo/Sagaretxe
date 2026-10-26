@@ -27,6 +27,35 @@ spl_autoload_register(function ($class) {
     }
 });
 
+// Inicializar motor de traducción e idiomas
+\App\Services\Language::init();
+
+if (!function_exists('__')) {
+    function __(string $key, ?string $default = null): string {
+        return \App\Services\Language::get($key, $default);
+    }
+}
+if (!function_exists('lang')) {
+    function lang(): string {
+        return \App\Services\Language::current();
+    }
+}
+if (!function_exists('isEn')) {
+    function isEn(): bool {
+        return \App\Services\Language::isEnglish();
+    }
+}
+if (!function_exists('langUrl')) {
+    function langUrl(string $path = '/', ?string $targetLang = null): string {
+        return \App\Services\Language::url($path, $targetLang);
+    }
+}
+if (!function_exists('switchLangUrl')) {
+    function switchLangUrl(string $targetLang): string {
+        return \App\Services\Language::switchUrl($targetLang);
+    }
+}
+
 use App\Core\Router;
 use App\Controllers\HomeController;
 use App\Controllers\MenuController;

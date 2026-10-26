@@ -1,0 +1,22 @@
+DirectoryIndex index.php
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
+
+    # 1. Si el archivo solicitado existe en public/assets, servirlo
+    RewriteRule ^assets/(.*)$ public/assets/$1 [L]
+
+    # 2. Si el archivo o directorio existe tal cual, servirlo
+    RewriteCond %{REQUEST_FILENAME} -f [OR]
+    RewriteCond %{REQUEST_FILENAME} -d
+    RewriteRule ^ - [L]
+
+    # 3. Si el archivo existe dentro de public/, servirlo
+    RewriteCond %{DOCUMENT_ROOT}/public/$1 -f [OR]
+    RewriteCond %{DOCUMENT_ROOT}/public/$1 -d
+    RewriteRule ^(.*)$ public/$1 [L]
+
+    # 4. Enrutar todas las peticiones dinámicas al controlador frontal
+    RewriteRule ^(.*)$ public/index.php [QSA,L]
+</IfModule>

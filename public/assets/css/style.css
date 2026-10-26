@@ -4,44 +4,53 @@
    ========================================================================== */
 
 :root {
-    /* Paleta de Color */
-    --bg-dark: #101214;
-    --bg-surface: #171a1e;
-    --bg-card: #1f2329;
-    --bg-card-hover: #262b32;
+    /* Paleta de Color – Inspirada en la estética Dark Luxury de Restaurante Lana */
+    --bg-dark: #0a0b0d;
+    --bg-surface: #101216;
+    --bg-card: #15181f;
+    --bg-card-hover: #1b1e26;
     --border-color: rgba(255, 255, 255, 0.08);
-    --border-accent: rgba(217, 130, 43, 0.35);
+    --border-accent: rgba(196, 162, 118, 0.28);
+    --border-hairline: rgba(196, 162, 118, 0.18);
 
-    /* Tonos Sidra, Roble y Fuego */
-    --cider-amber: #d9822b;
-    --cider-amber-hover: #c27221;
-    --cider-gold: #f59e0b;
-    --cider-amber-glow: rgba(217, 130, 43, 0.22);
-    --oak-dark: #261f19;
-    --oak-brown: #3a2e24;
-    --ember-red: #b93826;
-    --basque-green: #2d5a43;
+    /* Tonos Oro Champán, Bronce y Brasas (Paleta Lana) */
+    --gold-lana: #c4a276;
+    --gold-lana-light: #dfc49e;
+    --gold-lana-dark: #a48050;
+    --gold-lana-glow: rgba(196, 162, 118, 0.22);
+
+    --cider-amber: #c4a276;
+    --cider-amber-hover: #dfc49e;
+    --cider-gold: #c4a276;
+    --cider-amber-glow: rgba(196, 162, 118, 0.2);
+    --oak-dark: #14110e;
+    --oak-brown: #241c15;
+    --ember-red: #a43828;
+    --basque-green: #234533;
 
     /* Textos y Contrastes */
-    --text-white: #f8f7f4;
-    --text-light: #e5e7eb;
-    --text-muted: #9ca3af;
-    --text-dim: #6b7280;
+    --text-white: #fdfdfc;
+    --text-light: #d6d7dc;
+    --text-muted: #9598a0;
+    --text-dim: #63666f;
 
-    /* Tipografías */
-    --font-heading: 'Fraunces', Georgia, serif;
+    /* Tipografías Editoriales de Alta Gastronomía */
+    --font-heading: 'Cormorant Garamond', 'Fraunces', Georgia, serif;
+    --font-serif: 'Cormorant Garamond', Georgia, serif;
     --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
 
     /* Estructura y Espaciado */
     --container-max: 1240px;
-    --radius-sm: 6px;
-    --radius-md: 12px;
-    --radius-lg: 18px;
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --radius-lg: 14px;
     --radius-full: 9999px;
-    --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.35);
-    --shadow-amber: 0 12px 35px rgba(217, 130, 43, 0.25);
+    --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.45);
+    --shadow-amber: 0 12px 35px rgba(196, 162, 118, 0.18);
     --transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
+
 
 /* Reset Universal */
 *, *::before, *::after {
@@ -317,16 +326,19 @@ h1, h2, h3, h4, h5, h6 {
 .nav-list {
     display: flex;
     list-style: none;
-    gap: 22px;
+    gap: 20px;
+    align-items: center;
 }
 
 .nav-list a {
     color: var(--text-light);
     font-weight: 500;
-    font-size: 0.925rem;
+    font-size: 0.88rem;
     padding: 6px 2px;
     position: relative;
     transition: color 0.2s;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
 }
 
 .nav-list a::after {
@@ -348,6 +360,35 @@ h1, h2, h3, h4, h5, h6 {
 .nav-list a:hover::after,
 .nav-list a.active::after {
     width: 100%;
+}
+
+/* Icono de Galería en la Navegación */
+.nav-gallery-icon {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(196, 162, 118, 0.3);
+    color: var(--gold-lana) !important;
+    font-size: 0.86rem;
+    padding: 0 !important;
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.nav-gallery-icon::after {
+    display: none !important;
+}
+
+.nav-gallery-icon:hover,
+.nav-gallery-icon.active {
+    background: var(--gold-lana);
+    border-color: var(--gold-lana);
+    color: #0a0b0d !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(196, 162, 118, 0.35);
 }
 
 /* Header Actions */
@@ -3040,3 +3081,1557 @@ h1, h2, h3, h4, h5, h6 {
         grid-template-columns: 1fr;
     }
 }
+
+/* ==========================================================================
+   ESTÉTICA RESTAURANTE LANA (FINE DINING STEAKHOUSE & ASADOR VASCO)
+   Diseño de Alta Gama: Negro Obsidiana, Oro Champán, Tipografía Cormorant
+   ========================================================================== */
+
+/* 1. Selector de Idioma en Cabecera (ESP | ENG) */
+.menu-categories-nav-lana {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 50px;
+}
+
+.cat-pill-lana {
+    padding: 8px 18px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border-hairline);
+    border-radius: var(--radius-full);
+    color: var(--text-light);
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: all 0.25s ease;
+}
+
+.cat-pill-lana:hover,
+.cat-pill-lana.active {
+    background: var(--gold-lana);
+    color: #08090a;
+    border-color: var(--gold-lana);
+    box-shadow: 0 4px 15px rgba(196, 162, 118, 0.25);
+}
+
+.lang-switch-box {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border-hairline);
+    border-radius: var(--radius-full);
+    font-size: 0.76rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    font-family: var(--font-sans);
+}
+
+.lang-switch-item {
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.lang-switch-item:hover {
+    color: var(--gold-lana-light);
+}
+
+.lang-switch-item.active {
+    color: var(--gold-lana);
+    font-weight: 700;
+}
+
+.lang-switch-sep {
+    color: var(--border-hairline);
+    font-size: 0.7rem;
+}
+
+/* Selector móvil */
+.mobile-lang-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 18px;
+    margin: 10px 14px 18px 14px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border-hairline);
+    border-radius: var(--radius-md);
+    font-size: 0.82rem;
+    color: var(--text-muted);
+}
+
+.mobile-lang-options {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.mobile-lang-btn {
+    color: var(--text-light);
+    font-weight: 600;
+    text-decoration: none;
+    padding: 2px 8px;
+}
+
+.mobile-lang-btn.active {
+    color: var(--gold-lana);
+    background: var(--gold-lana-glow);
+    border-radius: var(--radius-sm);
+}
+
+.mobile-lang-sep {
+    color: var(--border-hairline);
+}
+
+/* 2. Botones de Alta Gama Lana (Emparejados, Estilizados y con Dinamismo Luminoso) */
+.btn-lana-action {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    height: 38px;
+    padding: 0 16px;
+    border-radius: 2px;
+    font-family: var(--font-sans);
+    font-size: 0.74rem;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    white-space: nowrap;
+    position: relative;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+/* Botón de Teléfono en Cabecera (Diseño gemelo y coherente con reserva) */
+.btn-lana-phone {
+    background: rgba(18, 20, 24, 0.85);
+    border: 1px solid rgba(196, 162, 118, 0.35);
+    color: var(--text-light);
+}
+
+.btn-lana-phone i {
+    color: var(--gold-lana);
+    font-size: 0.78rem;
+    transition: transform 0.25s ease;
+}
+
+.btn-lana-phone:hover {
+    background: rgba(196, 162, 118, 0.14);
+    border-color: var(--gold-lana);
+    color: var(--gold-lana-light);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 16px rgba(196, 162, 118, 0.2);
+}
+
+.btn-lana-phone:hover i {
+    transform: rotate(15deg) scale(1.1);
+}
+
+/* Botón de Reserva (Borde dorado con respiración suave) */
+.btn-lana-reserve {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    background: rgba(196, 162, 118, 0.08);
+    border: 1px solid var(--gold-lana);
+    color: var(--gold-lana);
+    font-family: var(--font-sans);
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    padding: 11px 22px;
+    border-radius: 2px;
+    text-decoration: none;
+    line-height: 1.2;
+    cursor: pointer;
+    box-shadow: 0 0 14px rgba(196, 162, 118, 0.18);
+    animation: reserveBorderBreathe 3.6s infinite ease-in-out;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    box-sizing: border-box;
+}
+
+.btn-lana-reserve:hover {
+    background: var(--gold-lana);
+    color: #08090a;
+    box-shadow: 0 4px 22px rgba(196, 162, 118, 0.45);
+    transform: translateY(-1px);
+}
+
+/* Botón de Galería en Cabecera (Mismo formato visual de alta gama) */
+.btn-lana-gallery {
+    width: 38px;
+    height: 38px;
+    min-width: 38px;
+    padding: 0;
+    background: rgba(18, 20, 24, 0.85);
+    border: 1px solid rgba(196, 162, 118, 0.35);
+    color: var(--gold-lana);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.88rem;
+}
+
+.btn-lana-gallery:hover,
+.btn-lana-gallery.active {
+    background: rgba(196, 162, 118, 0.16);
+    border-color: var(--gold-lana);
+    color: var(--gold-lana-light);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 16px rgba(196, 162, 118, 0.22);
+}
+
+.btn-lana-gallery:hover i {
+    transform: scale(1.15);
+}
+
+.btn-lana-dot {
+    width: 6px;
+    height: 6px;
+    background: var(--gold-lana);
+    border-radius: 50%;
+    display: inline-block;
+    transition: background 0.3s ease;
+    animation: pulseGlow 2s infinite;
+}
+
+.btn-lana-reserve:hover .btn-lana-dot {
+    background: #08090a;
+    animation: none;
+}
+
+@keyframes pulseGlow {
+    0%, 100% { opacity: 0.5; transform: scale(0.9); }
+    50% { opacity: 1; transform: scale(1.3); }
+}
+
+@keyframes reserveBorderBreathe {
+    0%, 100% {
+        border-color: rgba(196, 162, 118, 0.65);
+        box-shadow: 0 0 10px rgba(196, 162, 118, 0.15), inset 0 0 6px rgba(196, 162, 118, 0.05);
+    }
+    50% {
+        border-color: #ffd89b;
+        box-shadow: 0 0 22px rgba(223, 196, 158, 0.5), inset 0 0 10px rgba(196, 162, 118, 0.2);
+    }
+}
+
+.btn-lana-outline {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: var(--text-white);
+    font-family: var(--font-sans);
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    padding: 11px 22px;
+    border-radius: 2px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.btn-lana-outline:hover {
+    border-color: var(--gold-lana);
+    color: var(--gold-lana-light);
+    background: rgba(196, 162, 118, 0.08);
+}
+
+.btn-lg-lana {
+    padding: 14px 32px;
+    font-size: 0.84rem;
+}
+
+/* 3. Hero Atmosférico Lana */
+.hero-cinematic-lana {
+    position: relative;
+    min-height: 88vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #08090b url('../images/hero-impacto.jpg') center center / cover no-repeat;
+    padding: 100px 0 80px 0;
+    overflow: hidden;
+}
+
+.hero-bg-overlay {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at center, rgba(10, 11, 14, 0.72) 0%, rgba(8, 9, 11, 0.94) 75%, rgba(6, 7, 9, 0.99) 100%);
+    z-index: 1;
+}
+
+.hero-lana-inner {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+.hero-badge-lana {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 22px;
+}
+
+.hero-badge-line {
+    width: 32px;
+    height: 1px;
+    background: var(--gold-lana);
+    opacity: 0.7;
+}
+
+.hero-badge-text {
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold-lana);
+}
+
+.hero-title-lana {
+    font-family: var(--font-serif);
+    font-size: clamp(2.6rem, 5.2vw, 4.4rem);
+    font-weight: 400;
+    line-height: 1.15;
+    color: var(--text-white);
+    margin-bottom: 22px;
+    letter-spacing: -0.01em;
+}
+
+.hero-desc-lana {
+    font-size: 1.12rem;
+    line-height: 1.85;
+    color: var(--text-light);
+    max-width: 760px;
+    margin: 0 auto 40px auto;
+    font-weight: 300;
+}
+
+/* Barra de Reserva Lana */
+.hero-booking-wrapper-lana {
+    max-width: 860px;
+    margin: 0 auto 36px auto;
+}
+
+.hero-booking-bar-lana {
+    display: grid;
+    grid-template-columns: 1.3fr 1.1fr 1.3fr 1.3fr;
+    background: rgba(14, 16, 20, 0.88);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--border-hairline);
+    border-radius: 4px;
+    padding: 12px 16px;
+    gap: 14px;
+    box-shadow: 0 16px 45px rgba(0, 0, 0, 0.6);
+    align-items: center;
+    position: relative;
+    transition: all 0.3s ease;
+    animation: bookingBarAura 4.5s infinite ease-in-out;
+}
+
+@keyframes bookingBarAura {
+    0%, 100% {
+        border-color: rgba(196, 162, 118, 0.25);
+        box-shadow: 0 16px 45px rgba(0, 0, 0, 0.6), 0 0 14px rgba(196, 162, 118, 0.08);
+    }
+    50% {
+        border-color: rgba(223, 196, 158, 0.55);
+        box-shadow: 0 16px 45px rgba(0, 0, 0, 0.6), 0 0 28px rgba(196, 162, 118, 0.24);
+    }
+}
+
+/* Pelota de luz brillante sutil que recorre el perímetro del borde de la reserva */
+.booking-border-orb {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: radial-gradient(circle, #ffffff 40%, #ffd89b 75%, #c4a276 100%);
+    box-shadow: 
+        0 0 5px 1px #ffffff,
+        0 0 10px 2px rgba(223, 196, 158, 0.85),
+        0 0 16px 4px rgba(196, 162, 118, 0.5);
+    pointer-events: none;
+    z-index: 10;
+    offset-path: inset(0 round 4px);
+    animation: orbTravelPerimeter 8s linear infinite;
+    transform: translate(-50%, -50%);
+    top: 0;
+    left: 0;
+}
+
+@keyframes orbTravelPerimeter {
+    0% {
+        offset-distance: 0%;
+    }
+    100% {
+        offset-distance: 100%;
+    }
+}
+
+.booking-col-lana {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    padding: 4px 10px;
+    border-right: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.booking-col-lana label {
+    font-size: 0.72rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--gold-lana);
+    margin-bottom: 4px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.booking-col-lana select,
+.booking-col-lana input {
+    background: transparent;
+    border: none;
+    color: var(--text-white);
+    font-family: var(--font-sans);
+    font-size: 0.9rem;
+    font-weight: 500;
+    outline: none;
+    cursor: pointer;
+}
+
+.booking-col-lana select option {
+    background: #15181f;
+    color: var(--text-white);
+}
+
+.booking-col-lana-btn {
+    display: flex;
+    align-items: center;
+    justify-content: stretch;
+}
+
+.btn-lana-submit {
+    width: 100%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: var(--gold-lana);
+    color: #08090b;
+    border: none;
+    font-family: var(--font-sans);
+    font-size: 0.76rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    padding: 13px 18px;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.btn-lana-submit:hover {
+    background: var(--gold-lana-light);
+    box-shadow: 0 4px 20px rgba(196, 162, 118, 0.4);
+    transform: translateY(-1px);
+}
+
+.hero-seals-row-lana {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    font-size: 0.82rem;
+    color: var(--text-muted);
+}
+
+.hero-seal-item {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.hero-seal-item i {
+    color: var(--gold-lana);
+    font-size: 0.85rem;
+}
+
+.hero-seal-sep {
+    color: var(--gold-lana);
+    opacity: 0.4;
+}
+
+/* 4. Manifiesto Editorial Lana */
+.section-manifesto-lana {
+    background: #090a0c;
+    padding: 85px 0;
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.manifesto-container-lana {
+    max-width: 820px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.manifesto-tag-lana {
+    display: inline-block;
+    font-family: var(--font-sans);
+    font-size: 0.74rem;
+    font-weight: 600;
+    letter-spacing: 0.26em;
+    text-transform: uppercase;
+    color: var(--gold-lana);
+    margin-bottom: 24px;
+}
+
+.manifesto-quote-lana {
+    font-family: var(--font-serif);
+    font-size: clamp(1.6rem, 3vw, 2.3rem);
+    font-weight: 400;
+    font-style: italic;
+    line-height: 1.5;
+    color: var(--text-white);
+    margin-bottom: 28px;
+}
+
+.manifesto-author-lana {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    font-size: 0.82rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+}
+
+.author-dash {
+    width: 24px;
+    height: 1px;
+    background: var(--border-hairline);
+}
+
+/* 5. Trilogía de Identidad (Parrilla, Barra, Txotx) */
+.section-trilogy-lana {
+    padding: 100px 0;
+    background: #0b0d10;
+}
+
+.section-header-lana {
+    text-align: center;
+    max-width: 720px;
+    margin: 0 auto 55px auto;
+}
+
+.section-subtag-lana {
+    display: inline-block;
+    font-family: var(--font-sans);
+    font-size: 0.74rem;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold-lana);
+    margin-bottom: 12px;
+}
+
+.section-title-lana {
+    font-family: var(--font-serif);
+    font-size: clamp(2.1rem, 3.8vw, 3rem);
+    font-weight: 400;
+    color: var(--text-white);
+    margin-bottom: 16px;
+    letter-spacing: 0.02em;
+}
+
+.gold-hairline-sep {
+    width: 48px;
+    height: 1px;
+    background: var(--gold-lana);
+    margin: 0 auto;
+    opacity: 0.8;
+}
+
+.trilogy-grid-lana {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+}
+
+.trilogy-card-lana {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    display: flex;
+    flex-direction: column;
+}
+
+.trilogy-card-lana:hover {
+    border-color: var(--border-accent);
+    transform: translateY(-4px);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
+}
+
+.trilogy-img-wrapper {
+    position: relative;
+    height: 250px;
+    overflow: hidden;
+}
+
+.trilogy-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.trilogy-card-lana:hover .trilogy-img {
+    transform: scale(1.06);
+}
+
+.trilogy-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(10, 11, 13, 0.1) 0%, rgba(10, 11, 13, 0.75) 100%);
+}
+
+.trilogy-badge {
+    position: absolute;
+    bottom: 14px;
+    left: 14px;
+    background: rgba(10, 11, 13, 0.85);
+    backdrop-filter: blur(8px);
+    border: 1px solid var(--border-hairline);
+    color: var(--gold-lana);
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 2px;
+}
+
+.trilogy-content {
+    padding: 26px 24px 30px 24px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.trilogy-title {
+    font-family: var(--font-serif);
+    font-size: 1.45rem;
+    font-weight: 500;
+    color: var(--text-white);
+    margin-bottom: 12px;
+}
+
+.trilogy-desc {
+    font-size: 0.94rem;
+    line-height: 1.7;
+    color: var(--text-light);
+    margin-bottom: 22px;
+    flex-grow: 1;
+}
+
+.trilogy-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.76rem;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--gold-lana);
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.trilogy-link:hover {
+    color: var(--gold-lana-light);
+    transform: translateX(4px);
+}
+
+/* 6. Mesa de Cortes Nobles (Inspirada en Lana) */
+.section-cuts-lana {
+    padding: 100px 0;
+    background: #090a0c;
+    border-top: 1px solid var(--border-color);
+}
+
+.cuts-header-lana {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-bottom: 48px;
+}
+
+.cuts-intro-desc {
+    color: var(--text-muted);
+    font-size: 1.05rem;
+    max-width: 580px;
+    margin-top: 10px;
+    line-height: 1.6;
+}
+
+.cuts-actions-mobile {
+    display: none;
+    margin-top: 32px;
+}
+
+.cuts-showcase-grid-lana {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+}
+
+.cut-item-card-lana {
+    background: #111317;
+    border: 1px solid var(--border-color);
+    padding: 24px;
+    border-radius: var(--radius-sm);
+    transition: all 0.3s ease;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.cut-item-card-lana:hover {
+    border-color: var(--border-accent);
+    background: #14171d;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.cut-img-thumb {
+    width: 110px;
+    height: 110px;
+    min-width: 110px;
+    border-radius: 4px;
+    overflow: hidden;
+    border: 1px solid var(--border-hairline);
+    background: #0d0f12;
+}
+
+.cut-img-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.cut-item-card-lana:hover .cut-img-thumb img {
+    transform: scale(1.08);
+}
+
+.cut-card-body {
+    flex-grow: 1;
+}
+
+.cut-top-row {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 10px;
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
+    padding-bottom: 8px;
+}
+
+.cut-name {
+    font-family: var(--font-serif);
+    font-size: 1.35rem;
+    font-weight: 500;
+    color: var(--text-white);
+}
+
+.cut-price {
+    font-family: var(--font-sans);
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--gold-lana);
+    white-space: nowrap;
+}
+
+.cut-description {
+    font-size: 0.92rem;
+    line-height: 1.65;
+    color: var(--text-light);
+    margin-bottom: 16px;
+}
+
+.cut-tags-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.cut-micro-tag {
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    padding: 3px 8px;
+    border-radius: 2px;
+    letter-spacing: 0.05em;
+}
+
+/* 6.5. Galería Visual y Google My Business en Portada */
+.section-home-gallery-lana {
+    padding: 100px 0;
+    background: #08090b;
+    border-top: 1px solid var(--border-color);
+}
+
+.home-gallery-grid-lana {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.home-gallery-item {
+    position: relative;
+    height: 260px;
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.home-gallery-item.hg-item-wide {
+    grid-column: span 2;
+}
+
+.home-gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.home-gallery-item:hover {
+    border-color: var(--border-accent);
+    transform: translateY(-3px);
+    box-shadow: 0 16px 35px rgba(0, 0, 0, 0.6);
+}
+
+.home-gallery-item:hover img {
+    transform: scale(1.07);
+}
+
+.hg-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(8, 9, 11, 0.05) 0%, rgba(8, 9, 11, 0.88) 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 22px;
+}
+
+.hg-tag {
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold-lana);
+    margin-bottom: 4px;
+}
+
+.hg-title {
+    font-family: var(--font-serif);
+    font-size: 1.18rem;
+    font-weight: 500;
+    color: var(--text-white);
+    margin: 0;
+    line-height: 1.3;
+}
+
+/* 7. Club Sagaretxe Estilo Lana */
+.section-club-lana {
+    padding: 95px 0;
+    background: #0c0e12;
+}
+
+.club-card-lana {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 48px;
+    align-items: center;
+    background: #12151b;
+    border: 1px solid var(--border-accent);
+    border-radius: var(--radius-sm);
+    padding: 56px 48px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+}
+
+.club-title-lana {
+    font-family: var(--font-serif);
+    font-size: clamp(2rem, 3.2vw, 2.7rem);
+    font-weight: 400;
+    color: var(--text-white);
+    margin-bottom: 16px;
+}
+
+.club-desc-lana {
+    font-size: 1.02rem;
+    line-height: 1.8;
+    color: var(--text-light);
+    margin-bottom: 24px;
+}
+
+.club-features-list-lana {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.club-features-list-lana li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: 0.95rem;
+    color: var(--text-light);
+    line-height: 1.5;
+}
+
+.club-features-list-lana li i {
+    color: var(--gold-lana);
+    margin-top: 3px;
+    font-size: 0.85rem;
+}
+
+.club-badge-visual-lana {
+    display: flex;
+    justify-content: center;
+}
+
+.club-gold-seal {
+    border: 2px solid var(--gold-lana);
+    background: #151821;
+    border-radius: var(--radius-sm);
+    padding: 44px 34px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(196, 162, 118, 0.15);
+    max-width: 320px;
+    width: 100%;
+}
+
+.seal-icon {
+    font-size: 2.4rem;
+    color: var(--gold-lana);
+    margin-bottom: 10px;
+}
+
+.seal-number {
+    font-family: var(--font-serif);
+    font-size: 3.6rem;
+    font-weight: 700;
+    color: #ffffff;
+    line-height: 1;
+}
+
+.seal-label {
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--gold-lana);
+    margin: 8px 0;
+}
+
+.seal-sub {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    line-height: 1.4;
+}
+
+/* 8. Reseñas Editoriales Lana */
+.section-reviews-lana {
+    padding: 95px 0;
+    background: #090a0c;
+    border-top: 1px solid var(--border-color);
+}
+
+.reviews-grid-lana {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 26px;
+}
+
+.review-box-lana {
+    background: #111317;
+    border: 1px solid var(--border-color);
+    padding: 32px 28px;
+    border-radius: var(--radius-sm);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: all 0.3s ease;
+}
+
+.review-box-lana:hover {
+    border-color: var(--border-accent);
+}
+
+.review-stars-lana {
+    color: var(--gold-lana);
+    font-size: 0.85rem;
+    margin-bottom: 16px;
+    display: flex;
+    gap: 4px;
+}
+
+.review-text-lana {
+    font-family: var(--font-serif);
+    font-size: 1.18rem;
+    font-style: italic;
+    line-height: 1.6;
+    color: var(--text-white);
+    margin-bottom: 24px;
+}
+
+.review-signer-lana {
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding-top: 14px;
+}
+
+.signer-name {
+    font-weight: 700;
+    color: var(--gold-lana);
+    font-size: 0.88rem;
+}
+
+.signer-source {
+    font-size: 0.74rem;
+    color: var(--text-muted);
+}
+
+/* 9. Final CTA Lana */
+.section-cta-final-lana {
+    padding: 100px 0;
+    background: radial-gradient(circle at center, #151821 0%, #0a0b0e 80%);
+    text-align: center;
+    border-top: 1px solid var(--border-color);
+}
+
+.cta-final-inner-lana {
+    max-width: 760px;
+    margin: 0 auto;
+}
+
+.cta-final-title-lana {
+    font-family: var(--font-serif);
+    font-size: clamp(2.2rem, 4vw, 3.2rem);
+    font-weight: 400;
+    color: var(--text-white);
+    margin-bottom: 18px;
+}
+
+.cta-final-desc-lana {
+    font-size: 1.08rem;
+    line-height: 1.75;
+    color: var(--text-light);
+    margin-bottom: 36px;
+}
+
+.cta-final-btns-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    flex-wrap: wrap;
+}
+
+/* 10. Pie de Página Lana (3 Columnas) */
+.footer-grid-lana {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr 1fr;
+    gap: 48px;
+    padding: 70px 0 50px 0;
+    align-items: flex-start;
+}
+
+.footer-col-lana {
+    font-size: 0.92rem;
+    color: var(--text-light);
+}
+
+.footer-col-center {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-heading-lana {
+    font-family: var(--font-sans);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold-lana);
+    margin-bottom: 16px;
+}
+
+.footer-brand-lana {
+    display: inline-block;
+    margin-bottom: 8px;
+}
+
+.footer-line {
+    margin-bottom: 4px;
+    font-weight: 500;
+    color: var(--text-white);
+}
+
+.footer-subline {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+}
+
+.footer-note-subtle {
+    font-size: 0.78rem;
+    color: var(--text-dim);
+    margin-top: 14px;
+    line-height: 1.5;
+}
+
+.footer-contact-block {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 18px;
+}
+
+.footer-contact-link {
+    color: var(--text-light);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.footer-contact-link:hover {
+    color: var(--gold-lana);
+}
+
+.footer-phone-highlight {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--gold-lana) !important;
+}
+
+.footer-socials-lana {
+    display: flex;
+    gap: 14px;
+    justify-content: center;
+    margin-top: 6px;
+}
+
+.footer-socials-lana a {
+    width: 38px;
+    height: 38px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--border-hairline);
+    border-radius: 50%;
+    color: var(--gold-lana);
+    transition: all 0.25s ease;
+}
+
+.footer-socials-lana a:hover {
+    background: var(--gold-lana);
+    color: #08090a;
+    transform: translateY(-2px);
+}
+
+.footer-map-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 14px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold-lana);
+    text-decoration: none;
+}
+
+.footer-map-link:hover {
+    color: var(--gold-lana-light);
+}
+
+.footer-bottom-lana {
+    border-top: 1px solid var(--border-color);
+    padding: 24px 0;
+    background: #07080a;
+}
+
+.footer-bottom-inner-lana {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 0.82rem;
+    color: var(--text-dim);
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.footer-lang-selector {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.footer-lang-selector a {
+    color: var(--text-muted);
+    text-decoration: none;
+}
+
+.footer-lang-selector a.active {
+    color: var(--gold-lana);
+    font-weight: 700;
+}
+
+.footer-legal-links-lana {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer-legal-links-lana a {
+    color: var(--text-dim);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.footer-legal-links-lana a:hover {
+    color: var(--text-light);
+}
+
+/* 11. Adaptación Responsive para Móviles */
+@media (max-width: 992px) {
+    .trilogy-grid-lana {
+        grid-template-columns: 1fr;
+    }
+    .cuts-showcase-grid-lana {
+        grid-template-columns: 1fr;
+    }
+    .home-gallery-grid-lana {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .cuts-actions-desktop {
+        display: none;
+    }
+    .cuts-actions-mobile {
+        display: block;
+    }
+    .club-card-lana {
+        grid-template-columns: 1fr;
+        padding: 36px 24px;
+        gap: 32px;
+    }
+    .reviews-grid-lana {
+        grid-template-columns: 1fr;
+    }
+    .footer-grid-lana {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 36px;
+    }
+    .footer-col-center {
+        order: -1;
+    }
+    .hero-booking-bar-lana {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+    .booking-col-lana {
+        border-right: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        padding-bottom: 8px;
+    }
+}
+
+/* ==========================================================================
+   12. DINAMISMO HERO: PARTÍCULAS DE BRASA / ASADOR VASCO
+   ========================================================================== */
+.hero-embers {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.hero-embers .ember {
+    position: absolute;
+    bottom: -10px;
+    border-radius: 50%;
+    background: radial-gradient(circle, #ffe2b3 15%, #c4a276 55%, rgba(164, 56, 40, 0) 100%);
+    opacity: 0;
+    box-shadow: 0 0 8px rgba(223, 196, 158, 0.6);
+    animation: emberDrift 7.5s infinite ease-in;
+}
+
+.ember-1 { left: 18%; width: 4px; height: 4px; animation-duration: 8s; animation-delay: 0s; }
+.ember-2 { left: 34%; width: 3px; height: 3px; animation-duration: 6.5s; animation-delay: 1.8s; }
+.ember-3 { left: 52%; width: 5px; height: 5px; animation-duration: 9.2s; animation-delay: 3.2s; }
+.ember-4 { left: 68%; width: 3px; height: 3px; animation-duration: 7s; animation-delay: 0.6s; }
+.ember-5 { left: 82%; width: 4px; height: 4px; animation-duration: 8.4s; animation-delay: 2.4s; }
+.ember-6 { left: 45%; width: 3px; height: 3px; animation-duration: 6.8s; animation-delay: 4.5s; }
+
+@keyframes emberDrift {
+    0% {
+        transform: translateY(0) translateX(0) scale(0.6);
+        opacity: 0;
+    }
+    20% {
+        opacity: 0.85;
+    }
+    60% {
+        transform: translateY(-45vh) translateX(28px) scale(1);
+        opacity: 0.65;
+    }
+    85% {
+        opacity: 0.35;
+    }
+    100% {
+        transform: translateY(-85vh) translateX(-22px) scale(0.3);
+        opacity: 0;
+    }
+}
+
+/* ==========================================================================
+   13. ELEMENTOS FLOTANTES INFERIORES (ESTILO LANA LUXURY)
+   ========================================================================== */
+
+/* 1. Selector de Idioma Flotante Inferior Izquierdo */
+.floating-lang-dock {
+    position: fixed;
+    bottom: 24px;
+    left: 24px;
+    z-index: 990;
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    background: rgba(14, 16, 20, 0.9);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(196, 162, 118, 0.3);
+    padding: 7px 15px;
+    border-radius: 9999px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.55), 0 2px 10px rgba(196, 162, 118, 0.12);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.floating-lang-dock:hover {
+    border-color: var(--gold-lana);
+    transform: translateY(-2px);
+    box-shadow: 0 14px 35px rgba(0, 0, 0, 0.65), 0 0 16px rgba(196, 162, 118, 0.25);
+}
+
+.lang-dock-globe {
+    color: var(--gold-lana);
+    font-size: 0.82rem;
+    margin-right: 3px;
+    opacity: 0.9;
+}
+
+.floating-lang-btn {
+    color: var(--text-muted);
+    font-family: var(--font-sans);
+    font-size: 0.73rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 2px 5px;
+    border-radius: 3px;
+    transition: all 0.2s ease;
+}
+
+.floating-lang-btn:hover {
+    color: var(--text-white);
+}
+
+.floating-lang-btn.active {
+    color: var(--gold-lana);
+    font-weight: 700;
+    text-shadow: 0 0 10px rgba(196, 162, 118, 0.5);
+}
+
+.floating-lang-sep {
+    color: rgba(255, 255, 255, 0.2);
+    font-size: 0.72rem;
+}
+
+/* 2. Acciones Flotantes Rápidas Inferior Derecho (Teléfono y Reserva con Brillo Dinámico) */
+.floating-actions-dock {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    z-index: 990;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.floating-action-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    height: 44px;
+    border-radius: 9999px;
+    text-decoration: none;
+    font-family: var(--font-sans);
+    font-size: 0.76rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    cursor: pointer;
+    position: relative;
+    border: none;
+    outline: none;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    white-space: nowrap;
+    box-sizing: border-box;
+}
+
+/* Botón Teléfono Flotante */
+.floating-btn-phone {
+    background: rgba(16, 18, 22, 0.9);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(196, 162, 118, 0.35);
+    color: var(--text-white);
+    padding: 0 18px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.55);
+}
+
+.floating-btn-phone i {
+    color: var(--gold-lana);
+    font-size: 0.85rem;
+    transition: transform 0.25s ease;
+}
+
+.floating-btn-phone:hover {
+    background: rgba(24, 27, 34, 0.96);
+    border-color: var(--gold-lana);
+    color: var(--gold-lana-light);
+    transform: translateY(-2px);
+    box-shadow: 0 14px 35px rgba(0, 0, 0, 0.65), 0 0 18px rgba(196, 162, 118, 0.25);
+}
+
+.floating-btn-phone:hover i {
+    transform: rotate(15deg) scale(1.1);
+}
+
+/* Botón Reserva Flotante (Gradiente Champagne Gold + Halo Vibrante + Sweep) */
+.floating-btn-reserve {
+    background: linear-gradient(135deg, #c4a276 0%, #ad8a57 100%);
+    color: #070809 !important;
+    border: 1px solid #e7cfad;
+    padding: 0 22px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.55), 0 0 20px rgba(196, 162, 118, 0.4);
+    overflow: hidden;
+    animation: floatingReservePulse 3.4s infinite ease-in-out;
+}
+
+.floating-btn-reserve .btn-lana-dot {
+    background: #070809;
+    animation: none;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.6);
+}
+
+.floating-btn-reserve:hover {
+    background: linear-gradient(135deg, #dfc49e 0%, #c4a276 100%);
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 14px 40px rgba(0, 0, 0, 0.65), 0 0 32px rgba(196, 162, 118, 0.7);
+}
+
+@keyframes floatingReservePulse {
+    0%, 100% {
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.55), 0 0 16px rgba(196, 162, 118, 0.35);
+    }
+    50% {
+        box-shadow: 0 12px 35px rgba(0, 0, 0, 0.65), 0 0 30px rgba(223, 196, 158, 0.65);
+    }
+}
+
+/* Adaptación Móvil de Elementos Flotantes y Contenidos */
+@media (max-width: 640px) {
+    .home-gallery-grid-lana {
+        grid-template-columns: 1fr;
+    }
+    .home-gallery-item.hg-item-wide {
+        grid-column: span 1;
+    }
+    .cut-item-card-lana {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .cut-img-thumb {
+        width: 100%;
+        height: 160px;
+        min-width: 0;
+    }
+    .floating-lang-dock {
+        bottom: 16px;
+        left: 14px;
+        padding: 6px 11px;
+    }
+    .floating-actions-dock {
+        bottom: 16px;
+        right: 14px;
+        gap: 8px;
+    }
+    .floating-btn-phone .floating-btn-text {
+        display: none;
+    }
+    .floating-btn-phone {
+        width: 44px;
+        height: 44px;
+        padding: 0;
+        border-radius: 50%;
+    }
+    .floating-btn-reserve {
+        padding: 0 16px;
+        height: 44px;
+        font-size: 0.72rem;
+    }
+}
+
+
