@@ -154,10 +154,10 @@ class Language {
                 // Top bar & claim
                 'topbar_location' => 'Chamberí: C/ Eloy Gonzalo, 26, Madrid',
                 'topbar_schedule' => 'Cocina y Parrilla abiertas todos los días',
-                'topbar_club_badge' => 'Club Sagaretxe 12% Dto',
+                'topbar_club_badge' => 'Club Gastronómico 12% Dto',
 
                 // Hero
-                'hero_badge' => 'ASADOR & SIDRERÍA VASCA • CHAMBERÍ, MADRID',
+                'hero_badge' => 'SIDRERÍA VASCA & ASADOR • CHAMBERÍ, MADRID',
                 'hero_title' => 'El Culto a la Brasa y la Tradición Vasca en Madrid',
                 'hero_subtitle' => 'En 1999, en pleno barrio de Chamberí, abrió sus puertas Sagaretxe. Veinticinco años acercando a la capital la autenticidad, la parrilla al carbón de encina y la emblemática barra de pintxos de los asadores vascos.',
                 'hero_btn_reserve' => 'RESERVAR MESA',
@@ -214,16 +214,16 @@ class Language {
 
                 // Club Sagaretxe
                 'club_tag' => 'MEMBRESÍA EXCLUSIVA',
-                'club_title' => 'Club Sagaretxe',
+                'club_title' => 'Club Gastronómico',
                 'club_desc' => 'Más que comensales, consideramos a nuestros visitantes como socios de nuestra familia gastronómica. Disfruta de un 12% de descuento directo en todas tus visitas durante todo el año, además de invitaciones exclusivas en tu cumpleaños.',
                 'club_benefit_1' => '12% de descuento directo en toda la carta durante todo un año.',
                 'club_benefit_2' => 'Atenciones especiales en celebraciones personales y aniversarios.',
                 'club_benefit_3' => 'Inscripción gratuita e inmediata sin cuotas ni compromisos.',
-                'club_btn' => 'UNIRME AL CLUB GOURMET',
+                'club_btn' => 'UNIRME AL CLUB GASTRONÓMICO',
 
                 // Reseñas
                 'reviews_tag' => 'TESTIMONIOS',
-                'reviews_title' => 'Palabras de Nuestros Parroquianos',
+                'reviews_title' => 'Palabras de Nuestros Clientes',
 
                 // Footer (3 Columnas Lana)
                 'footer_hours' => 'HORARIOS',
@@ -280,10 +280,10 @@ class Language {
                 // Top bar & claim
                 'topbar_location' => 'Chamberí: 26 Eloy Gonzalo St, Madrid',
                 'topbar_schedule' => 'Kitchen & Grill open every day',
-                'topbar_club_badge' => 'Club Sagaretxe 12% Off',
+                'topbar_club_badge' => 'Gourmet Club 12% Off',
 
                 // Hero
-                'hero_badge' => 'BASQUE GRILL & CIDER HOUSE • CHAMBERÍ, MADRID',
+                'hero_badge' => 'BASQUE CIDER HOUSE & ASADOR • CHAMBERÍ, MADRID',
                 'hero_title' => 'The Art of Basque Fire and Culinary Tradition in Madrid',
                 'hero_subtitle' => 'In 1999, in the heart of Chamberí, Sagaretxe opened its doors. For over twenty-five years bringing the authenticity of holm oak charcoal grilling, natural cider poured from wooden casks, and the iconic Basque pintxo counter to Spain’s capital.',
                 'hero_btn_reserve' => 'BOOK A TABLE',
@@ -340,7 +340,7 @@ class Language {
 
                 // Club Sagaretxe
                 'club_tag' => 'EXCLUSIVE MEMBERSHIP',
-                'club_title' => 'Club Sagaretxe',
+                'club_title' => 'Gourmet Club',
                 'club_desc' => 'More than customers, we regard our guests as partners in our culinary family. Enjoy a 12% direct discount on all à la carte meals throughout the entire year, alongside exclusive birthday invitations.',
                 'club_benefit_1' => '12% direct discount on all à la carte meals for a full year.',
                 'club_benefit_2' => 'Exclusive promotions and courtesy gifts on birthdays and celebrations.',
@@ -349,7 +349,7 @@ class Language {
 
                 // Reviews
                 'reviews_tag' => 'REVIEWS',
-                'reviews_title' => 'What Our Guests Say',
+                'reviews_title' => 'Words from Our Clients',
 
                 // Footer (Lana 3 Columns)
                 'footer_hours' => 'OPENING HOURS',

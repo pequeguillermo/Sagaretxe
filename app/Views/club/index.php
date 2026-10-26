@@ -7,7 +7,7 @@
     <div class="container">
         <div class="section-header-lana">
             <span class="section-subtag-lana"><?= isEn() ? 'EXCLUSIVE MEMBERSHIP' : 'PROGRAMA DE FIDELIZACIÓN' ?></span>
-            <h1 class="section-title-lana"><?= isEn() ? 'Club Sagaretxe' : 'Club Gourmet Sagaretxe' ?></h1>
+            <h1 class="section-title-lana"><?= isEn() ? 'Gourmet Club Sagaretxe' : 'Club Gastronómico Sagaretxe' ?></h1>
             <p class="section-description" style="max-width: 720px; margin: 0 auto 24px auto;">
                 <?= isEn() 
                     ? 'More than customers, we regard our guests as culinary family. Join free in under 1 minute and enjoy a direct 12% discount on all à la carte meals year-round.' 
@@ -20,11 +20,11 @@
         <div class="club-card-lana" style="margin-bottom: 55px;">
             <div class="club-info-lana">
                 <span class="section-subtag-lana"><?= isEn() ? 'PRIVILEGES' : 'VENTAJAS EXCLUSIVAS' ?></span>
-                <h2 class="club-title-lana"><?= isEn() ? 'Why Become a Member?' : '¿Por qué Unirte al Club?' ?></h2>
+                <h2 class="club-title-lana"><?= isEn() ? 'Why Join the Gourmet Club?' : '¿Por qué Unirte al Club Gastronómico?' ?></h2>
                 <p class="club-desc-lana">
                     <?= isEn() 
                         ? 'Joining Sagaretxe Gourmet Club is 100% free with zero fees or obligations. Enter your details to activate exclusive rewards every time you visit.' 
-                        : 'Ser socio de Sagaretxe es totalmente gratuito. No hay cuotas ni compromisos. Solo déjanos tus datos de contacto para premiar tu fidelidad cada vez que vengas a disfrutar de nuestra taberna y asador.' ?>
+                        : 'Ser socio de nuestro club gastronómico es totalmente gratuito. No hay cuotas ni compromisos. Solo déjanos tus datos de contacto para premiar tu fidelidad cada vez que vengas a disfrutar de nuestra taberna y asador.' ?>
                 </p>
                 <ul class="club-features-list-lana">
                     <li><i class="fa-solid fa-check"></i> <span><strong><?= isEn() ? '12% direct discount' : '12% de descuento directo' ?></strong> <?= isEn() ? 'on all à la carte dishes for a full year.' : 'en comidas a la carta durante todo un año renovable.' ?></span></li>
@@ -49,7 +49,7 @@
         <!-- Formulario de Registro al Club -->
         <div id="clubFormWrapper" class="form-card" style="border-color: var(--border-accent); background: #12151b;">
             <h2 style="font-family: var(--font-serif); font-size: 2rem; margin-bottom: 8px; text-align: center; color: var(--text-white);">
-                <?= isEn() ? 'Free Registration to Club Sagaretxe' : 'Inscripción Gratuita al Club Sagaretxe' ?>
+                <?= isEn() ? 'Free Registration to Gourmet Club' : 'Inscripción Gratuita al Club Gastronómico' ?>
             </h2>
             <p style="text-align: center; color: var(--text-muted); font-size: 0.95rem; margin-bottom: 30px;">
                 <?= isEn() ? 'Fill in your details to activate your 12% discount instantly.' : 'Rellena tus datos para activar tu descuento del 12% de forma instantánea.' ?>
@@ -155,7 +155,7 @@
 
                 <div style="margin-top: 36px; margin-bottom: 8px;">
                     <button type="submit" id="clubSubmitBtn" class="btn-lana-submit" style="width: 100%; padding: 16px;">
-                        <i class="fa-solid fa-crown" style="margin-right: 8px;"></i> <?= isEn() ? 'Register for Club Sagaretxe (Free)' : 'Registrarme al Club Sagaretxe (Gratis)' ?>
+                        <i class="fa-solid fa-crown" style="margin-right: 8px;"></i> <?= isEn() ? 'Register for Gourmet Club (Free)' : 'Registrarme al Club Gastronómico (Gratis)' ?>
                     </button>
                 </div>
             </form>
@@ -166,7 +166,7 @@
             <div style="width: 76px; height: 76px; border-radius: var(--radius-full); background: rgba(196, 162, 118, 0.15); border: 2px solid var(--gold-lana); color: var(--gold-lana); display: flex; align-items: center; justify-content: center; font-size: 2.4rem; margin: 0 auto 20px;">
                 <i class="fa-solid fa-crown"></i>
             </div>
-            <h2 style="font-family: var(--font-serif); font-size: 2.4rem; color: #fff; margin-bottom: 10px;"><?= isEn() ? 'Welcome to Club Sagaretxe!' : '¡Bienvenido al Club Sagaretxe!' ?></h2>
+            <h2 style="font-family: var(--font-serif); font-size: 2.4rem; color: #fff; margin-bottom: 10px;"><?= isEn() ? 'Welcome to Gourmet Club!' : '¡Bienvenido al Club Gastronómico!' ?></h2>
             <p style="font-size: 1.15rem; color: var(--text-light); max-width: 580px; margin: 0 auto 25px;">
                 <?= isEn() 
                     ? 'Your membership registration is complete. You can now enjoy your 12% direct discount on all dishes.' 

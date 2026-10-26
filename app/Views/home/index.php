@@ -51,9 +51,9 @@
         <aside class="hero-edge-left" aria-label="Tradición de Brasa">
             <div class="edge-line-vert"></div>
             <div class="edge-vert-content">
-                <span class="vert-text"><?= __('hero_badge_grill') ?></span>
+                <span class="vert-text"><?= isEn() ? 'PIL-PIL COD & CHARCOAL STEAKS' : 'BACALAO AL PIL PIL Y CHULETAS' ?></span>
                 <span class="vert-bullet">◆</span>
-                <span class="vert-text"><?= isEn() ? 'Aged Prime Beef · Tableside Weighing' : 'Carne Seleccionada · Pesaje en Sala' ?></span>
+                <span class="vert-text"><?= __('hero_badge_grill') ?></span>
             </div>
             <div class="edge-line-vert"></div>
         </aside>
@@ -73,6 +73,7 @@
         <div class="hero-edge-bottom">
             <!-- Título editorial que corona la base del marco -->
             <div class="hero-bottom-heading">
+                <div class="hero-mobile-subbadge"><?= isEn() ? 'PIL-PIL COD & CHARCOAL STEAKS' : 'BACALAO AL PIL PIL Y CHULETAS' ?></div>
                 <h1 class="hero-frame-headline"><?= __('hero_title') ?></h1>
             </div>
 
@@ -212,8 +213,47 @@
 </section>
 
 <!-- 4. MESA DE CORTES NOBLES (INSPIRADA EN LA MESA DE CARNES DE RESTAURANTE LANA) -->
-<section class="section-cuts-lana">
-    <div class="container">
+<section class="section-cuts-lana" id="cortes">
+    <!-- Efecto Dinámico de Brasas y Llamas Ascendentes con Degradado (Carbón de Encina Sagaretxe) -->
+    <div class="cuts-brasa-flames-canvas" aria-hidden="true">
+        <!-- Resplandor basal de las brasas incandescentes -->
+        <div class="cuts-embers-bed"></div>
+        
+        <!-- Video Real de Llamas Vivas de Fuego sobre Fondo Negro con mix-blend-mode screen -->
+        <div class="cuts-flames-video-wrap">
+            <video class="cuts-fire-video cuts-fire-left" autoplay loop muted playsinline poster="<?= BASE_URL ?>/assets/images/hero-impacto.jpg">
+                <source src="<?= BASE_URL ?>/assets/videos/llamas-fondo.mp4" type="video/mp4">
+            </video>
+            <video class="cuts-fire-video cuts-fire-center" autoplay loop muted playsinline poster="<?= BASE_URL ?>/assets/images/hero-impacto.jpg">
+                <source src="<?= BASE_URL ?>/assets/videos/llamas-brasa.mp4" type="video/mp4">
+            </video>
+            <video class="cuts-fire-video cuts-fire-right" autoplay loop muted playsinline poster="<?= BASE_URL ?>/assets/images/hero-impacto.jpg">
+                <source src="<?= BASE_URL ?>/assets/videos/llamas-brasa.mp4" type="video/mp4">
+            </video>
+        </div>
+
+        <!-- Manto de degradado que difumina las llamas para que no alcancen la parte superior -->
+        <div class="cuts-flames-smoke-fade"></div>
+
+        <!-- Transición suave en el borde inferior con la siguiente sección -->
+        <div class="cuts-flames-bottom-fade"></div>
+
+        <!-- Chispas y ascuas flotantes de carbón de encina -->
+        <div class="cuts-embers-sparks">
+            <span class="c-spark cs-1"></span>
+            <span class="c-spark cs-2"></span>
+            <span class="c-spark cs-3"></span>
+            <span class="c-spark cs-4"></span>
+            <span class="c-spark cs-5"></span>
+            <span class="c-spark cs-6"></span>
+            <span class="c-spark cs-7"></span>
+            <span class="c-spark cs-8"></span>
+            <span class="c-spark cs-9"></span>
+            <span class="c-spark cs-10"></span>
+        </div>
+    </div>
+
+    <div class="container cuts-relative-content">
         <div class="cuts-header-lana">
             <div>
                 <span class="section-subtag-lana"><?= __('cuts_tag') ?></span>

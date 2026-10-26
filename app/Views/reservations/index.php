@@ -174,7 +174,7 @@
 
             <!-- Aviso de Socio del Club -->
             <div id="successClubDiscountNotice" style="display: none; background: rgba(196, 162, 118, 0.12); border: 1px solid var(--border-accent); border-radius: var(--radius-md); padding: 16px; margin: 0 auto 25px; max-width: 580px; color: var(--gold-lana); font-weight: 700; font-size: 1.05rem;">
-                <i class="fa-solid fa-crown"></i> <?= isEn() ? 'CLUB SAGARETXE MEMBER DETECTED' : '¡ERES SOCIO DEL CLUB SAGARETXE!' ?><br>
+                <i class="fa-solid fa-crown"></i> <?= isEn() ? 'GOURMET CLUB MEMBER DETECTED' : '¡ERES SOCIO DEL CLUB GASTRONÓMICO!' ?><br>
                 <span style="font-size: 0.9rem; font-weight: 500; color: #fff;"><?= isEn() ? 'Mention your membership phone number tableside to receive your direct 12% discount.' : 'Indica en sala al pedir la cuenta que perteneces al club facilitando tu teléfono y te aplicaremos tu 12% de descuento directo.' ?></span>
             </div>
 

@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 window.scrollTo({ top: successWrapper.offsetTop - 80, behavior: 'smooth' });
             } else if (data.message) {
                 submitBtn.disabled = false;
-                submitBtn.innerHTML = 'Registrarme al Club Sagaretxe (Gratis)';
+                submitBtn.innerHTML = 'Registrarme al Club Gastronómico (Gratis)';
                 feedbackMsg.className = 'alert-feedback error';
                 feedbackMsg.innerHTML = `<i class="fa-solid fa-circle-exclamation"></i> ${data.message}`;
                 feedbackMsg.style.display = 'block';
@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
         } catch (error) {
             console.error(error);
             submitBtn.disabled = false;
-            submitBtn.innerHTML = 'Registrarme al Club Sagaretxe (Gratis)';
+            submitBtn.innerHTML = 'Registrarme al Club Gastronómico (Gratis)';
             feedbackMsg.className = 'alert-feedback error';
             feedbackMsg.innerHTML = '<i class="fa-solid fa-triangle-exclamation"></i> Error al conectar con el servidor. Inténtalo de nuevo o llámanos al 914 46 25 88.';
             feedbackMsg.style.display = 'block';
