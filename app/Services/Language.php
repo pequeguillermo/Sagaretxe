@@ -245,9 +245,11 @@ class Language {
                 'menu_pdf_download' => 'DESCARGAR CARTA EN PDF',
                 'menu_cat_starters' => 'Entrantes Tradicionales',
                 'menu_cat_salads' => 'Ensaladas Frescas',
+                'menu_cat_cod' => 'Nuestro Bacalao de Autor',
                 'menu_cat_meats' => 'Carnes al Carbón de Encina',
                 'menu_cat_fish' => 'Pescados al Estilo Donostia',
                 'menu_cat_desserts' => 'Postres Artesanales',
+                'menu_cat_coffees' => 'Cafés Especiales y Sobremesa',
                 'menu_half_portion' => 'Media',
 
                 // Reservas
@@ -371,9 +373,11 @@ class Language {
                 'menu_pdf_download' => 'DOWNLOAD MENU (PDF)',
                 'menu_cat_starters' => 'Traditional Starters',
                 'menu_cat_salads' => 'Fresh Garden Salads',
+                'menu_cat_cod' => 'Our Signature Cod',
                 'menu_cat_meats' => 'Charcoal Grilled Meats',
                 'menu_cat_fish' => 'Donostia-Style Fresh Fish',
                 'menu_cat_desserts' => 'Artisan Desserts',
+                'menu_cat_coffees' => 'Specialty Coffees & Digestifs',
                 'menu_half_portion' => 'Half',
 
                 // Reservations

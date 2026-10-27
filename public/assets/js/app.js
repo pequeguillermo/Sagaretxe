@@ -235,6 +235,47 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     initFloatingDocksOnScroll();
+
+    // 8. Navegación y ScrollSpy de Categorías en la Carta
+    function initMenuCategoriesScrollSpy() {
+        const pillsNav = document.querySelector('.menu-categories-nav-lana');
+        if (!pillsNav) return;
+        const pills = pillsNav.querySelectorAll('.cat-pill-lana');
+        const sections = document.querySelectorAll('.carta-section');
+        if (!pills.length || !sections.length) return;
+
+        function updateActivePill() {
+            const scrollPos = window.scrollY + 180;
+            let currentSectionId = '';
+
+            sections.forEach(section => {
+                const top = section.offsetTop;
+                const height = section.offsetHeight;
+                if (scrollPos >= top && scrollPos < top + height) {
+                    currentSectionId = section.getAttribute('id');
+                }
+            });
+
+            if (currentSectionId) {
+                pills.forEach(pill => {
+                    const href = pill.getAttribute('href');
+                    if (href === '#' + currentSectionId) {
+                        if (!pill.classList.contains('active')) {
+                            pill.classList.add('active');
+                            pill.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+                        }
+                    } else {
+                        pill.classList.remove('active');
+                    }
+                });
+            }
+        }
+
+        window.addEventListener('scroll', updateActivePill, { passive: true });
+        updateActivePill();
+    }
+
+    initMenuCategoriesScrollSpy();
 });
 
 
