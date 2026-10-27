@@ -17,6 +17,45 @@
         <!-- Feedback de Mensajes / Estado -->
         <div id="resFeedback" class="alert-feedback"></div>
 
+        <!-- AVISO DESTACADO PARA MENÚS DE GRUPOS (CONTACTO POR TELÉFONO) -->
+        <div class="reservation-groups-notice">
+            <div class="rg-notice-inner">
+                <div class="rg-notice-icon">
+                    <i class="fa-solid fa-people-group"></i>
+                </div>
+                <div class="rg-notice-text">
+                    <div class="rg-notice-header">
+                        <span class="rg-notice-tag"><i class="fa-solid fa-triangle-exclamation"></i> <?= isEn() ? 'IMPORTANT NOTICE FOR GROUPS' : 'AVISO IMPORTANTE PARA GRUPOS' ?></span>
+                        <h3 class="rg-notice-title"><?= isEn() ? 'Looking to book a Group Menu or corporate celebration?' : '¿Quieres reservar un Menú de Grupos o comida de empresa?' ?></h3>
+                    </div>
+                    <p class="rg-notice-desc">
+                        <?= isEn() 
+                            ? 'Please note that <strong>Group Menus cannot be booked online</strong>. To guarantee dining room availability and personalize your group experience, please contact us directly by phone:' 
+                            : 'Los menús de grupos <strong>no se pueden reservar de forma online</strong>. Para reservas de grupos, comidas de empresa o menús cerrados es imprescindible ponerse en contacto directo por teléfono con nosotros:' ?>
+                    </p>
+                    <div class="rg-notice-phones-box">
+                        <div class="rg-phones-subline">
+                            <span class="rg-phone-kind"><i class="fa-solid fa-phone"></i> <?= isEn() ? 'Landlines:' : 'Teléfonos Fijos:' ?></span>
+                            <a href="tel:+34914462588" class="rg-phone-link highlight">(+34) 914 46 25 88</a>
+                            <span class="rg-phone-sep">//</span>
+                            <a href="tel:+34914456023" class="rg-phone-link">914 45 60 23</a>
+                        </div>
+                        <div class="rg-phones-subline">
+                            <span class="rg-phone-kind"><i class="fa-solid fa-mobile-screen"></i> <?= isEn() ? 'Mobiles / WhatsApp:' : 'Móviles / WhatsApp:' ?></span>
+                            <a href="tel:+34622179060" class="rg-phone-link mobile">622 179 060</a>
+                            <span class="rg-phone-sep">//</span>
+                            <a href="tel:+34633179060" class="rg-phone-link mobile">633 179 060</a>
+                        </div>
+                    </div>
+                    <div class="rg-notice-action">
+                        <a href="<?= langUrl('/menus') ?>" class="rg-notice-btn-menus">
+                            <i class="fa-solid fa-book-open"></i> <?= isEn() ? 'View our 6 Group Menus' : 'Ver las propuestas de Menús para Grupos' ?> →
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <!-- Tarjeta de Formulario de Reserva -->
         <div id="reservationStepCard" class="form-card" style="border-color: var(--border-accent); background: #12151b;">
             <form id="reservationForm">
@@ -35,6 +74,7 @@
                         <div class="form-group">
                             <label for="resAdults" class="form-label"><?= isEn() ? 'Adults' : 'Adultos' ?> <span>*</span></label>
                             <input type="number" id="resAdults" min="1" max="50" value="2" class="form-control" required>
+                            <small style="font-size: 0.74rem; color: var(--gold-lana); display: block; margin-top: 4px; line-height: 1.3;"><i class="fa-solid fa-phone"></i> <?= isEn() ? 'Group menus strictly by phone' : 'Menús de grupos por tlf.' ?></small>
                         </div>
                         <div class="form-group">
                             <label for="resChildren" class="form-label"><?= isEn() ? 'Children' : 'Niños' ?></label>

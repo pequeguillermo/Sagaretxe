@@ -45,7 +45,7 @@
       "name": "Sagaretxe – Asador y Sidrería Vasca",
       "image": "https://sagaretxe.net/wp-content/uploads/2023/10/logo-sagarretxe-claro.png",
       "url": "https://sagaretxe.net",
-      "telephone": "+34914462588",
+      "telephone": ["+34914462588", "+34914456023", "+34622179060", "+34633179060"],
       "servesCuisine": ["Basque", "Steakhouse", "Grill", "Pintxos", "Cider House"],
       "priceRange": "€€ - €€€",
       "address": {
@@ -207,9 +207,22 @@
                 </a>
                 <h3 class="footer-heading-lana" style="margin-top: 14px;"><?= __('footer_contact') ?></h3>
                 <div class="footer-contact-block">
-                    <a href="mailto:<?= RESTAURANT_EMAIL ?>" class="footer-contact-link"><?= RESTAURANT_EMAIL ?></a>
-                    <a href="tel:+34914462588" class="footer-contact-link footer-phone-highlight">914 46 25 88</a>
-                    <a href="tel:+34622179060" class="footer-contact-link" style="color: var(--text-muted);">622 179 060</a>
+                    <a href="mailto:<?= RESTAURANT_EMAIL ?>" class="footer-contact-link"><i class="fa-solid fa-envelope"></i> <?= RESTAURANT_EMAIL ?></a>
+                    
+                    <div class="footer-phones-container">
+                        <div class="footer-phones-line">
+                            <span class="footer-phone-tag"><i class="fa-solid fa-phone"></i></span>
+                            <a href="tel:+34914462588" class="footer-contact-link footer-phone-highlight">(+34) 914 46 25 88</a>
+                            <span class="footer-phone-slash">//</span>
+                            <a href="tel:+34914456023" class="footer-contact-link footer-phone-item">914 45 60 23</a>
+                        </div>
+                        <div class="footer-phones-line">
+                            <span class="footer-phone-tag"><i class="fa-solid fa-mobile-screen"></i></span>
+                            <a href="tel:+34622179060" class="footer-contact-link footer-phone-item">622 179 060</a>
+                            <span class="footer-phone-slash">//</span>
+                            <a href="tel:+34633179060" class="footer-contact-link footer-phone-item">633 179 060</a>
+                        </div>
+                    </div>
                 </div>
                 <div class="footer-socials-lana">
                     <a href="<?= SOCIAL_INSTAGRAM ?>" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>

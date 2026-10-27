@@ -1,5 +1,6 @@
 <!-- ==========================================================================
      SAGARETXE – MENÚS ESPECIALES PARA GRUPOS Y EMPRESAS
+     Reserva Exclusiva Telefónica • Sin Botón de Reserva Online
      ========================================================================== -->
 
 <section class="section">
@@ -12,32 +13,81 @@
                     ? 'Curated to deliver a complete, generous, and festive Basque experience. Shared appetizers at center table, choice of individual charcoal-grilled mains, artisan desserts, select cellar wines, and natural cider from the barrel included.' 
                     : 'Confeccionados para brindar una experiencia gastronómica completa, abundante y festiva. Entrantes al centro de mesa, platos principales individuales a elegir, postres caseros, bodega selecta y sidra al txotx incluida.' ?>
             </p>
-            <div style="display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; margin-bottom: 24px;">
-                <a href="<?= langUrl('/eventos') ?>" class="btn-lana-reserve">
-                    <span class="btn-lana-dot"></span>
-                    <span><?= isEn() ? 'Request Event Quote' : 'Solicitar Presupuesto' ?></span>
-                </a>
-                <a href="tel:+34914462588" class="btn-lana-outline">
-                    <i class="fa-solid fa-phone"></i>
-                    <span>914 46 25 88</span>
-                </a>
+            
+            <!-- Bloque de Contacto Telefónico Superior -->
+            <div class="group-header-phones-block">
+                <span class="gh-phone-badge"><i class="fa-solid fa-phone-volume"></i> <?= isEn() ? 'DIRECT RESERVATIONS BY PHONE' : 'RESERVAS DIRECTAS POR TELÉFONO' ?></span>
+                <div class="gh-phone-pairs">
+                    <div class="gh-pair">
+                        <span class="gh-type"><?= isEn() ? 'Landlines:' : 'Fijos:' ?></span>
+                        <a href="tel:+34914462588" class="gh-phone-link highlight">(+34) 914 46 25 88</a>
+                        <span class="gh-sep">//</span>
+                        <a href="tel:+34914456023" class="gh-phone-link">914 45 60 23</a>
+                    </div>
+                    <div class="gh-pair">
+                        <span class="gh-type"><?= isEn() ? 'Mobiles / WhatsApp:' : 'Móviles / WhatsApp:' ?></span>
+                        <a href="tel:+34622179060" class="gh-phone-link mobile">622 179 060</a>
+                        <span class="gh-sep">//</span>
+                        <a href="tel:+34633179060" class="gh-phone-link mobile">633 179 060</a>
+                    </div>
+                </div>
             </div>
-            <div class="gold-hairline-sep"></div>
+
+            <div class="gold-hairline-sep" style="margin-top: 25px;"></div>
+        </div>
+
+        <!-- AVISO DESTACADO: MENÚS DE GRUPOS NO SE RESERVAN ONLINE -->
+        <div class="group-phone-notice-card">
+            <div class="gpn-icon">
+                <i class="fa-solid fa-phone-volume"></i>
+            </div>
+            <div class="gpn-content">
+                <div class="gpn-badge">
+                    <span><i class="fa-solid fa-triangle-exclamation"></i> <?= isEn() ? 'IMPORTANT NOTICE' : 'AVISO IMPORTANTE' ?></span>
+                    <span class="gpn-badge-sub"><?= isEn() ? 'No Online Booking for Group Menus' : 'Los menús de grupos no admiten reserva online' ?></span>
+                </div>
+                <h3 class="gpn-title">
+                    <?= isEn() ? 'Group Menus are reserved exclusively by phone' : 'Los menús de grupos se deben reservar poniéndose en contacto por teléfono' ?>
+                </h3>
+                <p class="gpn-desc">
+                    <?= isEn() 
+                        ? 'To ensure proper room allocation, date confirmation, and menu tailoring for food allergies or dietary preferences, <strong>our group menus cannot be booked online</strong>. Please get in touch directly with our team:' 
+                        : 'Para garantizar la mejor organización de sala, disponibilidad de fechas y adaptación de platos o alérgenos, <strong>los menús de grupos no se pueden reservar de forma online</strong>. Debes ponerte en contacto directamente por teléfono con nosotros:' ?>
+                </p>
+                <div class="gpn-phones-wrapper">
+                    <div class="gpn-phone-block">
+                        <span class="gpn-phone-type"><i class="fa-solid fa-phone"></i> <?= isEn() ? 'Landlines:' : 'Teléfonos Fijos:' ?></span>
+                        <div class="gpn-phone-links">
+                            <a href="tel:+34914462588" class="gpn-link highlight"><i class="fa-solid fa-phone"></i> (+34) 914 46 25 88</a>
+                            <span class="gpn-sep">//</span>
+                            <a href="tel:+34914456023" class="gpn-link">914 45 60 23</a>
+                        </div>
+                    </div>
+                    <div class="gpn-phone-block">
+                        <span class="gpn-phone-type"><i class="fa-solid fa-mobile-screen"></i> <?= isEn() ? 'Mobiles / WhatsApp:' : 'Móviles / WhatsApp:' ?></span>
+                        <div class="gpn-phone-links">
+                            <a href="tel:+34622179060" class="gpn-link mobile"><i class="fa-solid fa-mobile-screen"></i> 622 179 060</a>
+                            <span class="gpn-sep">//</span>
+                            <a href="tel:+34633179060" class="gpn-link mobile">633 179 060</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <!-- Condiciones Generales de Reserva de Grupos -->
-        <div class="group-conditions-box" style="background: #12151b; border: 1px solid var(--border-accent); border-radius: var(--radius-sm);">
-            <h3 style="font-family: var(--font-serif); font-size: 1.35rem; color: var(--gold-lana);"><i class="fa-solid fa-triangle-exclamation"></i> <?= isEn() ? 'Important Guidelines for Group Reservations' : 'Muy Importante para la Reserva de Grupos' ?></h3>
+        <div class="group-conditions-box" style="background: #12151b; border: 1px solid var(--border-accent); border-radius: var(--radius-sm); margin-top: 30px;">
+            <h3 style="font-family: var(--font-serif); font-size: 1.35rem; color: var(--gold-lana);"><i class="fa-solid fa-clipboard-check"></i> <?= isEn() ? 'Important Guidelines for Group Reservations' : 'Condiciones y Normativa de Menús de Grupos' ?></h3>
             <ul>
                 <li><strong><?= isEn() ? 'Tailored Menus:' : 'Menús a Medida:' ?></strong> <?= isEn() ? 'If you wish to modify courses or accommodate dietary allergies or vegetarian requests, reach out and we will personalize your menu.' : 'Si deseas realizar alguna modificación o adaptar opciones para alérgenos o vegetarianos, consúltanos y confeccionaremos una propuesta personalizada.' ?></li>
-                <li><strong><?= isEn() ? 'Notice period:' : 'Antelación mínima:' ?></strong> <?= isEn() ? 'Group bookings and menu choices should be confirmed at least 10 days in advance.' : 'Se ruega que las reservas de grupos y la confirmación de menús se formalicen con un mínimo de 10 días de antelación.' ?></li>
+                <li><strong><?= isEn() ? 'Notice period:' : 'Antelación mínima:' ?></strong> <?= isEn() ? 'Group bookings and menu choices should be confirmed at least 10 days in advance by telephone.' : 'Se ruega que las reservas de grupos y la confirmación de menús se formalicen con un mínimo de 10 días de antelación llamando por teléfono.' ?></li>
                 <li><strong><?= isEn() ? 'Market freshness:' : 'Frescura de mercado:' ?></strong> <?= isEn() ? 'Courses may vary slightly depending on fish market availability, replaced with equal or superior grade cuts.' : 'Los platos pueden sufrir ligeras variaciones según disponibilidad de lonja, sustituyéndose por opciones de categoría igual o superior.' ?></li>
                 <li><strong><?= isEn() ? 'Corporate & Holiday Dinners:' : 'Aviso especial (Noviembre y Diciembre):' ?></strong> <?= isEn() ? 'Christmas and end-of-year corporate dinners require a 20% advance booking deposit.' : 'Las reservas para cenas de empresa y Navidad requieren el abono de una señal del 20% para quedar formalizadas.' ?></li>
             </ul>
         </div>
 
         <!-- Grid de los 6 Menús -->
-        <div class="group-menus-grid">
+        <div class="group-menus-grid" style="margin-top: 45px;">
             <!-- MENÚ 1 -->
             <div class="group-menu-card">
                 <div class="group-menu-header">
@@ -81,7 +131,26 @@
                     </ul>
                 </div>
 
-                <a href="<?= BASE_URL ?>/reservas" class="btn btn-primary btn-block btn-sm">Reservar Menú 1</a>
+                <!-- Acción telefónica para reservar Menú 1 -->
+                <div class="group-card-booking-box">
+                    <span class="group-card-booking-label">
+                        <i class="fa-solid fa-phone"></i> <?= isEn() ? 'Reservations strictly by phone:' : 'Reserva exclusiva por teléfono:' ?>
+                    </span>
+                    <div class="group-card-booking-phones">
+                        <a href="tel:+34914462588" class="btn-card-phone btn-card-main" title="Llamar al fijo">
+                            <i class="fa-solid fa-phone"></i> 914 46 25 88
+                        </a>
+                        <a href="tel:+34622179060" class="btn-card-phone btn-card-mobile" title="Llamar o WhatsApp">
+                            <i class="fa-solid fa-mobile-screen"></i> 622 179 060
+                        </a>
+                    </div>
+                    <div class="group-card-subphones">
+                        <span><?= isEn() ? 'Other lines:' : 'Otras líneas:' ?></span>
+                        <a href="tel:+34914456023">914 45 60 23</a>
+                        <span class="sep">//</span>
+                        <a href="tel:+34633179060">633 179 060</a>
+                    </div>
+                </div>
             </div>
 
             <!-- MENÚ 2 -->
@@ -127,7 +196,26 @@
                     </ul>
                 </div>
 
-                <a href="<?= BASE_URL ?>/reservas" class="btn btn-primary btn-block btn-sm">Reservar Menú 2</a>
+                <!-- Acción telefónica para reservar Menú 2 -->
+                <div class="group-card-booking-box">
+                    <span class="group-card-booking-label">
+                        <i class="fa-solid fa-phone"></i> <?= isEn() ? 'Reservations strictly by phone:' : 'Reserva exclusiva por teléfono:' ?>
+                    </span>
+                    <div class="group-card-booking-phones">
+                        <a href="tel:+34914462588" class="btn-card-phone btn-card-main" title="Llamar al fijo">
+                            <i class="fa-solid fa-phone"></i> 914 46 25 88
+                        </a>
+                        <a href="tel:+34622179060" class="btn-card-phone btn-card-mobile" title="Llamar o WhatsApp">
+                            <i class="fa-solid fa-mobile-screen"></i> 622 179 060
+                        </a>
+                    </div>
+                    <div class="group-card-subphones">
+                        <span><?= isEn() ? 'Other lines:' : 'Otras líneas:' ?></span>
+                        <a href="tel:+34914456023">914 45 60 23</a>
+                        <span class="sep">//</span>
+                        <a href="tel:+34633179060">633 179 060</a>
+                    </div>
+                </div>
             </div>
 
             <!-- MENÚ 3 -->
@@ -173,7 +261,26 @@
                     </ul>
                 </div>
 
-                <a href="<?= BASE_URL ?>/reservas" class="btn btn-primary btn-block btn-sm">Reservar Menú 3</a>
+                <!-- Acción telefónica para reservar Menú 3 -->
+                <div class="group-card-booking-box">
+                    <span class="group-card-booking-label">
+                        <i class="fa-solid fa-phone"></i> <?= isEn() ? 'Reservations strictly by phone:' : 'Reserva exclusiva por teléfono:' ?>
+                    </span>
+                    <div class="group-card-booking-phones">
+                        <a href="tel:+34914462588" class="btn-card-phone btn-card-main" title="Llamar al fijo">
+                            <i class="fa-solid fa-phone"></i> 914 46 25 88
+                        </a>
+                        <a href="tel:+34622179060" class="btn-card-phone btn-card-mobile" title="Llamar o WhatsApp">
+                            <i class="fa-solid fa-mobile-screen"></i> 622 179 060
+                        </a>
+                    </div>
+                    <div class="group-card-subphones">
+                        <span><?= isEn() ? 'Other lines:' : 'Otras líneas:' ?></span>
+                        <a href="tel:+34914456023">914 45 60 23</a>
+                        <span class="sep">//</span>
+                        <a href="tel:+34633179060">633 179 060</a>
+                    </div>
+                </div>
             </div>
 
             <!-- MENÚ 4 -->
@@ -220,7 +327,26 @@
                     </ul>
                 </div>
 
-                <a href="<?= BASE_URL ?>/reservas" class="btn btn-primary btn-block btn-sm">Reservar Menú 4</a>
+                <!-- Acción telefónica para reservar Menú 4 -->
+                <div class="group-card-booking-box">
+                    <span class="group-card-booking-label">
+                        <i class="fa-solid fa-phone"></i> <?= isEn() ? 'Reservations strictly by phone:' : 'Reserva exclusiva por teléfono:' ?>
+                    </span>
+                    <div class="group-card-booking-phones">
+                        <a href="tel:+34914462588" class="btn-card-phone btn-card-main" title="Llamar al fijo">
+                            <i class="fa-solid fa-phone"></i> 914 46 25 88
+                        </a>
+                        <a href="tel:+34622179060" class="btn-card-phone btn-card-mobile" title="Llamar o WhatsApp">
+                            <i class="fa-solid fa-mobile-screen"></i> 622 179 060
+                        </a>
+                    </div>
+                    <div class="group-card-subphones">
+                        <span><?= isEn() ? 'Other lines:' : 'Otras líneas:' ?></span>
+                        <a href="tel:+34914456023">914 45 60 23</a>
+                        <span class="sep">//</span>
+                        <a href="tel:+34633179060">633 179 060</a>
+                    </div>
+                </div>
             </div>
 
             <!-- MENÚ 5 (EL MÁS EXCLUSIVO) -->
@@ -268,7 +394,26 @@
                     </ul>
                 </div>
 
-                <a href="<?= BASE_URL ?>/reservas" class="btn btn-primary btn-block btn-sm">Reservar Menú 5</a>
+                <!-- Acción telefónica para reservar Menú 5 -->
+                <div class="group-card-booking-box">
+                    <span class="group-card-booking-label">
+                        <i class="fa-solid fa-phone"></i> <?= isEn() ? 'Reservations strictly by phone:' : 'Reserva exclusiva por teléfono:' ?>
+                    </span>
+                    <div class="group-card-booking-phones">
+                        <a href="tel:+34914462588" class="btn-card-phone btn-card-main" title="Llamar al fijo">
+                            <i class="fa-solid fa-phone"></i> 914 46 25 88
+                        </a>
+                        <a href="tel:+34622179060" class="btn-card-phone btn-card-mobile" title="Llamar o WhatsApp">
+                            <i class="fa-solid fa-mobile-screen"></i> 622 179 060
+                        </a>
+                    </div>
+                    <div class="group-card-subphones">
+                        <span><?= isEn() ? 'Other lines:' : 'Otras líneas:' ?></span>
+                        <a href="tel:+34914456023">914 45 60 23</a>
+                        <span class="sep">//</span>
+                        <a href="tel:+34633179060">633 179 060</a>
+                    </div>
+                </div>
             </div>
 
             <!-- MENÚ 6 DEGUSTACIÓN DE PINTXOS Y TABERNA -->
@@ -309,22 +454,62 @@
                     </ul>
                 </div>
 
-                <a href="<?= BASE_URL ?>/reservas" class="btn btn-primary btn-block btn-sm">Reservar Menú 6</a>
+                <!-- Acción telefónica para reservar Menú 6 -->
+                <div class="group-card-booking-box">
+                    <span class="group-card-booking-label">
+                        <i class="fa-solid fa-phone"></i> <?= isEn() ? 'Reservations strictly by phone:' : 'Reserva exclusiva por teléfono:' ?>
+                    </span>
+                    <div class="group-card-booking-phones">
+                        <a href="tel:+34914462588" class="btn-card-phone btn-card-main" title="Llamar al fijo">
+                            <i class="fa-solid fa-phone"></i> 914 46 25 88
+                        </a>
+                        <a href="tel:+34622179060" class="btn-card-phone btn-card-mobile" title="Llamar o WhatsApp">
+                            <i class="fa-solid fa-mobile-screen"></i> 622 179 060
+                        </a>
+                    </div>
+                    <div class="group-card-subphones">
+                        <span><?= isEn() ? 'Other lines:' : 'Otras líneas:' ?></span>
+                        <a href="tel:+34914456023">914 45 60 23</a>
+                        <span class="sep">//</span>
+                        <a href="tel:+34633179060">633 179 060</a>
+                    </div>
+                </div>
             </div>
         </div>
 
-        <!-- Contacto rápido para empresas -->
-        <div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 42px 35px; text-align: center; margin-top: 60px; margin-bottom: 25px;">
-            <h3 style="font-size: 1.6rem; margin-bottom: 12px;">¿Necesitas Organizar un Menú Especial a Medida?</h3>
-            <p style="color: var(--text-muted); max-width: 680px; margin: 0 auto 24px; font-size: 1.05rem;">
-                Contáctanos directamente o utiliza nuestro formulario de eventos. Nuestro equipo te asesorará con salas privadas, personalizaciones de bodega y necesidades dietéticas.
+        <!-- Contacto telefónico completo para reservas de grupos y empresas -->
+        <div class="group-bottom-contact-box">
+            <span class="group-bottom-tag"><?= isEn() ? 'DIRECT PHONE BOOKING' : 'ATENCIÓN Y RESERVAS DE GRUPO' ?></span>
+            <h3 class="group-bottom-title"><?= isEn() ? 'Personalized Attention for Groups & Corporate Dinners' : 'Reserva tu Menú de Grupo Directamente por Teléfono' ?></h3>
+            <p class="group-bottom-desc">
+                <?= isEn() 
+                    ? 'Our team coordinates room assignments, dietary modifications, and wine selections to ensure an unforgettable gathering. Reach out to any of our lines:' 
+                    : 'Los menús de grupos se reservan exclusivamente por teléfono para coordinar salas privadas, alérgenos y detalles a medida. Llámanos a cualquiera de nuestras líneas directas:' ?>
             </p>
-            <div style="display: flex; justify-content: center; gap: 16px; flex-wrap: wrap;">
-                <a href="<?= BASE_URL ?>/eventos" class="btn btn-primary">
-                    <i class="fa-solid fa-champagne-glasses"></i> Solicitar Presupuesto de Evento
-                </a>
-                <a href="tel:+34914462588" class="btn btn-outline">
-                    <i class="fa-solid fa-phone"></i> Llamar al 914 46 25 88
+            
+            <div class="group-bottom-phones-grid">
+                <div class="group-bphone-col">
+                    <span class="group-bphone-type"><i class="fa-solid fa-phone"></i> <?= isEn() ? 'Landlines:' : 'Teléfonos Fijos:' ?></span>
+                    <div class="group-bphone-numbers">
+                        <a href="tel:+34914462588" class="group-bphone-link highlight"><i class="fa-solid fa-phone"></i> (+34) 914 46 25 88</a>
+                        <span class="group-bphone-sep">//</span>
+                        <a href="tel:+34914456023" class="group-bphone-link">914 45 60 23</a>
+                    </div>
+                </div>
+                <div class="group-bphone-col">
+                    <span class="group-bphone-type"><i class="fa-solid fa-mobile-screen"></i> <?= isEn() ? 'Mobiles / WhatsApp:' : 'Móviles / WhatsApp:' ?></span>
+                    <div class="group-bphone-numbers">
+                        <a href="tel:+34622179060" class="group-bphone-link mobile"><i class="fa-solid fa-mobile-screen"></i> 622 179 060</a>
+                        <span class="group-bphone-sep">//</span>
+                        <a href="tel:+34633179060" class="group-bphone-link mobile">633 179 060</a>
+                    </div>
+                </div>
+            </div>
+
+            <div style="margin-top: 30px;">
+                <a href="<?= langUrl('/eventos') ?>" class="btn-lana-reserve">
+                    <span class="btn-lana-dot"></span>
+                    <span><i class="fa-solid fa-champagne-glasses"></i> <?= isEn() ? 'Request Tailored Corporate Quote' : 'Solicitar Presupuesto Especial para Eventos' ?></span>
                 </a>
             </div>
         </div>
