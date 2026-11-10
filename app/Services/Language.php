@@ -192,17 +192,17 @@ class Language {
                 'pillar_2_link' => 'VER LA BARRA DE PINTXOS',
 
                 'pillar_3_title' => 'La Tradición del Txotx',
-                'pillar_3_desc' => 'Kupelas abiertas todo el año para escanciar la sidra natural vasca directamente del barril, acompañada de nuestra famosa tortilla de bacalao y chuletón al peso.',
+                'pillar_3_desc' => 'Kupelas abiertas todo el año para escanciar la sidra natural vasca directamente del barril, acompañada de nuestra famosa tortilla de bacalao y txuleta al peso.',
                 'pillar_3_link' => 'CONOCER EL RITUAL',
 
                 // Signature Cuts / Mesa de carnes (estilo Lana)
                 'cuts_tag' => 'CORTES NOBLES',
-                'cuts_title' => 'Selección de Brasa y Temporada',
+                'cuts_title' => 'Las Mejores Carnes y el Mejor Pescado Hechos de Forma Tradicional',
                 'cuts_subtitle' => 'Piezas seleccionadas con pesaje y presentación previa en mesa para su perfecto asado a la parrilla.',
                 'cut_1_name' => 'Txuleta de Vaca Vieja Selección',
                 'cut_1_desc' => 'Maduración controlada de 45 días, grasa infiltrada y sabor profundo al carbón de encina.',
                 'cut_1_price' => 'Al peso / s.m.',
-                'cut_2_name' => 'Chuletón de Rubia Gallega',
+                'cut_2_name' => 'Txuleta de Rubia Gallega',
                 'cut_2_desc' => 'Carne tierna y equilibrada con aromas nobles de pasto y humo de madera noble.',
                 'cut_2_price' => 'Al peso / s.m.',
                 'cut_3_name' => 'Tortilla de Bacalao de Feroe',
@@ -250,6 +250,13 @@ class Language {
                 'menu_cat_fish' => 'Pescados al Estilo Donostia',
                 'menu_cat_desserts' => 'Postres Artesanales',
                 'menu_cat_coffees' => 'Cafés Especiales y Sobremesa',
+                'menu_pill_starters' => 'Entrantes',
+                'menu_pill_salads' => 'Ensaladas',
+                'menu_pill_cod' => 'Bacalao',
+                'menu_pill_meats' => 'Carnes',
+                'menu_pill_fish' => 'Pescados',
+                'menu_pill_desserts' => 'Postres',
+                'menu_pill_coffees' => 'Cafés',
                 'menu_half_portion' => 'Media',
 
                 // Reservas
@@ -325,7 +332,7 @@ class Language {
 
                 // Signature Cuts / Meat Table (Lana style)
                 'cuts_tag' => 'PRIME CUTS',
-                'cuts_title' => 'Charcoal Grill Selection',
+                'cuts_title' => 'Prime Meats & Finest Fish Cooked the Traditional Way',
                 'cuts_subtitle' => 'Handpicked cuts weighed and presented tableside before being cooked to perfection over hot coals.',
                 'cut_1_name' => 'Aged Basque Beef Ribeye (Txuleta)',
                 'cut_1_desc' => '45-day dry-aged mature beef with rich marbling and the unmistakable smoky depth of holm oak charcoal.',
@@ -378,6 +385,13 @@ class Language {
                 'menu_cat_fish' => 'Donostia-Style Fresh Fish',
                 'menu_cat_desserts' => 'Artisan Desserts',
                 'menu_cat_coffees' => 'Specialty Coffees & Digestifs',
+                'menu_pill_starters' => 'Starters',
+                'menu_pill_salads' => 'Salads',
+                'menu_pill_cod' => 'Cod',
+                'menu_pill_meats' => 'Meats',
+                'menu_pill_fish' => 'Fish',
+                'menu_pill_desserts' => 'Desserts',
+                'menu_pill_coffees' => 'Coffees',
                 'menu_half_portion' => 'Half',
 
                 // Reservations

@@ -45,7 +45,7 @@
       "name": "Sagaretxe – Asador y Sidrería Vasca",
       "image": "https://sagaretxe.net/wp-content/uploads/2023/10/logo-sagarretxe-claro.png",
       "url": "https://sagaretxe.net",
-      "telephone": ["+34914462588", "+34914456023", "+34622179060", "+34633179060"],
+      "telephone": ["+34914462588", "+34914456023", "+34633179060"],
       "servesCuisine": ["Basque", "Steakhouse", "Grill", "Pintxos", "Cider House"],
       "priceRange": "€€ - €€€",
       "address": {
@@ -110,7 +110,7 @@
             <div class="header-actions">
                 <button class="btn-lana-action btn-lana-phone" id="openPhoneModal" title="<?= isEn() ? 'Phone numbers' : 'Teléfonos de atención' ?>" aria-label="Teléfonos">
                     <i class="fa-solid fa-phone"></i>
-                    <span class="btn-action-text">914 46 25 88</span>
+                    <span class="btn-action-text">914.462.588</span>
                 </button>
 
                 <a href="<?= langUrl('/reservas') ?>" class="btn-lana-action btn-lana-reserve">
@@ -171,8 +171,9 @@
                     <i class="fa-solid fa-calendar-check" style="margin-right: 8px;"></i> <?= __('nav_reserve_online') ?>
                 </a>
                 <div class="mobile-quick-phones">
-                    <a href="tel:+34914462588" class="phone-link"><i class="fa-solid fa-phone"></i> 914 46 25 88</a>
-                    <a href="tel:+34622179060" class="phone-link"><i class="fa-solid fa-mobile-screen"></i> 622 179 060</a>
+                    <a href="tel:+34914462588" class="phone-link"><i class="fa-solid fa-phone"></i> 914.462.588</a>
+                    <a href="tel:+34914456023" class="phone-link"><i class="fa-solid fa-phone"></i> 914.456.023</a>
+                    <a href="tel:+34633179060" class="phone-link"><i class="fa-solid fa-mobile-screen"></i> 633.179.060</a>
                 </div>
             </div>
         </div>
@@ -212,15 +213,11 @@
                     <div class="footer-phones-container">
                         <div class="footer-phones-line">
                             <span class="footer-phone-tag"><i class="fa-solid fa-phone"></i></span>
-                            <a href="tel:+34914462588" class="footer-contact-link footer-phone-highlight">(+34) 914 46 25 88</a>
+                            <a href="tel:+34914462588" class="footer-contact-link footer-phone-highlight">(+34) 914.462.588</a>
                             <span class="footer-phone-slash">//</span>
-                            <a href="tel:+34914456023" class="footer-contact-link footer-phone-item">914 45 60 23</a>
-                        </div>
-                        <div class="footer-phones-line">
-                            <span class="footer-phone-tag"><i class="fa-solid fa-mobile-screen"></i></span>
-                            <a href="tel:+34622179060" class="footer-contact-link footer-phone-item">622 179 060</a>
+                            <a href="tel:+34914456023" class="footer-contact-link footer-phone-item">914.456.023</a>
                             <span class="footer-phone-slash">//</span>
-                            <a href="tel:+34633179060" class="footer-contact-link footer-phone-item">633 179 060</a>
+                            <a href="tel:+34633179060" class="footer-contact-link footer-phone-item">633.179.060</a>
                         </div>
                     </div>
                 </div>
@@ -310,7 +307,7 @@
                     <a href="tel:+34914462588" class="phone-item">
                         <div class="phone-item-icon"><i class="fa-solid fa-phone"></i></div>
                         <div class="phone-item-info">
-                            <strong>914 46 25 88</strong>
+                            <strong>(+34) 914.462.588</strong>
                             <span><?= isEn() ? 'Main Phone' : 'Teléfono Fijo Principal' ?></span>
                         </div>
                         <span class="phone-call-action"><?= isEn() ? 'Call' : 'Llamar' ?></span>
@@ -318,24 +315,16 @@
                     <a href="tel:+34914456023" class="phone-item">
                         <div class="phone-item-icon"><i class="fa-solid fa-phone"></i></div>
                         <div class="phone-item-info">
-                            <strong>914 45 60 23</strong>
+                            <strong>914.456.023</strong>
                             <span><?= isEn() ? 'Secondary Line' : 'Línea Secundaria' ?></span>
-                        </div>
-                        <span class="phone-call-action"><?= isEn() ? 'Call' : 'Llamar' ?></span>
-                    </a>
-                    <a href="tel:+34622179060" class="phone-item">
-                        <div class="phone-item-icon"><i class="fa-solid fa-mobile-screen"></i></div>
-                        <div class="phone-item-info">
-                            <strong>622 179 060</strong>
-                            <span>WhatsApp / Mobile</span>
                         </div>
                         <span class="phone-call-action"><?= isEn() ? 'Call' : 'Llamar' ?></span>
                     </a>
                     <a href="tel:+34633179060" class="phone-item">
                         <div class="phone-item-icon"><i class="fa-solid fa-mobile-screen"></i></div>
                         <div class="phone-item-info">
-                            <strong>633 179 060</strong>
-                            <span>Mobile Line 2</span>
+                            <strong>633.179.060</strong>
+                            <span>WhatsApp / Móvil</span>
                         </div>
                         <span class="phone-call-action"><?= isEn() ? 'Call' : 'Llamar' ?></span>
                     </a>
@@ -346,6 +335,14 @@
                     <i class="fa-solid fa-calendar-check" style="margin-right: 8px;"></i> <?= __('nav_reserve_online') ?>
                 </a>
             </div>
+        </div>
+    </div>
+
+    <!-- Lightbox Modal Global para Ampliación de Fotografías -->
+    <div class="lightbox-modal" id="lightboxModal" role="dialog" aria-modal="true" aria-label="<?= isEn() ? 'Enlarged Image' : 'Imagen Ampliada' ?>">
+        <button class="lightbox-close" id="closeLightbox" aria-label="<?= isEn() ? 'Close view' : 'Cerrar imagen' ?>">&times;</button>
+        <div class="lightbox-img-wrapper">
+            <img src="" alt="Vista ampliada" class="lightbox-img" id="lightboxImg">
         </div>
     </div>
 
@@ -361,7 +358,7 @@
     <aside class="floating-actions-dock" id="floatingActionsDock" aria-label="<?= isEn() ? 'Quick Actions' : 'Acciones Rápidas' ?>">
         <button class="floating-action-btn floating-btn-phone" id="openFloatingPhoneModal" title="<?= isEn() ? 'Call or view phone numbers' : 'Llamar o ver teléfonos' ?>" aria-label="Teléfono">
             <i class="fa-solid fa-phone"></i>
-            <span class="floating-btn-text">914 46 25 88</span>
+            <span class="floating-btn-text">914.462.588</span>
         </button>
 
         <a href="<?= langUrl('/reservas') ?>" class="floating-action-btn floating-btn-reserve" title="<?= isEn() ? 'Book a Table' : 'Reservar Mesa' ?>" aria-label="Reservar Mesa">

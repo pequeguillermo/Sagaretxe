@@ -31,13 +31,13 @@
 <div class="menu-categories-sticky-wrapper">
     <div class="container">
         <nav class="menu-categories-nav-lana" aria-label="Categorías de la Carta">
-            <a href="#entrantes" class="cat-pill-lana active"><?= __('menu_cat_starters') ?></a>
-            <a href="#ensaladas" class="cat-pill-lana"><?= __('menu_cat_salads') ?></a>
-            <a href="#bacalao" class="cat-pill-lana"><?= __('menu_cat_cod') ?></a>
-            <a href="#carnes" class="cat-pill-lana"><?= __('menu_cat_meats') ?></a>
-            <a href="#pescados" class="cat-pill-lana"><?= __('menu_cat_fish') ?></a>
-            <a href="#postres" class="cat-pill-lana"><?= __('menu_cat_desserts') ?></a>
-            <a href="#cafes" class="cat-pill-lana"><?= __('menu_cat_coffees') ?></a>
+            <a href="#entrantes" class="cat-pill-lana active"><?= __('menu_pill_starters') ?></a>
+            <a href="#ensaladas" class="cat-pill-lana"><?= __('menu_pill_salads') ?></a>
+            <a href="#bacalao" class="cat-pill-lana"><?= __('menu_pill_cod') ?></a>
+            <a href="#carnes" class="cat-pill-lana"><?= __('menu_pill_meats') ?></a>
+            <a href="#pescados" class="cat-pill-lana"><?= __('menu_pill_fish') ?></a>
+            <a href="#postres" class="cat-pill-lana"><?= __('menu_pill_desserts') ?></a>
+            <a href="#cafes" class="cat-pill-lana"><?= __('menu_pill_coffees') ?></a>
         </nav>
     </div>
 </div>

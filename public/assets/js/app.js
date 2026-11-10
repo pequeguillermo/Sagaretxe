@@ -275,7 +275,230 @@ document.addEventListener('DOMContentLoaded', () => {
         updateActivePill();
     }
 
-    initMenuCategoriesScrollSpy();
+    // 9. Slider / Carrusel Interactivo de la Barra de Pintxos
+    function initPintxosSlider() {
+        const track = document.getElementById('pintxosSliderTrack');
+        const prevBtn = document.getElementById('pintxosSlidePrev');
+        const nextBtn = document.getElementById('pintxosSlideNext');
+
+        if (!track) return;
+
+        function getCardStep() {
+            const firstCard = track.querySelector('.pintxo-slide-card');
+            if (!firstCard) return 302;
+            const gap = parseFloat(window.getComputedStyle(track).gap) || 22;
+            return firstCard.offsetWidth + gap;
+        }
+
+        function scrollNext() {
+            const step = getCardStep();
+            const maxScroll = track.scrollWidth - track.clientWidth;
+            if (track.scrollLeft >= maxScroll - 15) {
+                track.scrollTo({ left: 0, behavior: 'smooth' });
+            } else {
+                track.scrollBy({ left: step, behavior: 'smooth' });
+            }
+        }
+
+        function scrollPrev() {
+            const step = getCardStep();
+            const maxScroll = track.scrollWidth - track.clientWidth;
+            if (track.scrollLeft <= 15) {
+                track.scrollTo({ left: maxScroll, behavior: 'smooth' });
+            } else {
+                track.scrollBy({ left: -step, behavior: 'smooth' });
+            }
+        }
+
+        if (nextBtn) nextBtn.addEventListener('click', scrollNext);
+        if (prevBtn) prevBtn.addEventListener('click', scrollPrev);
+
+        // Autoplay con pausa en interacción
+        let autoPlayTimer = null;
+        const autoPlayInterval = 3800;
+
+        function startAutoplay() {
+            if (autoPlayTimer) clearInterval(autoPlayTimer);
+            autoPlayTimer = setInterval(scrollNext, autoPlayInterval);
+        }
+
+        function stopAutoplay() {
+            if (autoPlayTimer) {
+                clearInterval(autoPlayTimer);
+                autoPlayTimer = null;
+            }
+        }
+
+        track.addEventListener('mouseenter', stopAutoplay);
+        track.addEventListener('mouseleave', startAutoplay);
+        track.addEventListener('touchstart', stopAutoplay, { passive: true });
+        track.addEventListener('touchend', startAutoplay, { passive: true });
+
+        if (nextBtn) {
+            nextBtn.addEventListener('mouseenter', stopAutoplay);
+            nextBtn.addEventListener('mouseleave', startAutoplay);
+        }
+        if (prevBtn) {
+            prevBtn.addEventListener('mouseenter', stopAutoplay);
+            prevBtn.addEventListener('mouseleave', startAutoplay);
+        }
+
+        startAutoplay();
+
+        // Soporte de arrastre táctil y con ratón (Drag to scroll)
+        let isDown = false;
+        let startX = 0;
+        let scrollStart = 0;
+        let hasDragged = false;
+
+        track.addEventListener('mousedown', (e) => {
+            isDown = true;
+            hasDragged = false;
+            startX = e.pageX - track.offsetLeft;
+            scrollStart = track.scrollLeft;
+            stopAutoplay();
+        });
+
+        window.addEventListener('mouseup', () => {
+            if (isDown) {
+                isDown = false;
+                startAutoplay();
+            }
+        });
+
+        track.addEventListener('mousemove', (e) => {
+            if (!isDown) return;
+            e.preventDefault();
+            const x = e.pageX - track.offsetLeft;
+            const walk = (x - startX) * 1.4;
+            if (Math.abs(walk) > 6) {
+                hasDragged = true;
+            }
+            track.scrollLeft = scrollStart - walk;
+        });
+
+        // Prevenir la apertura del lightbox si el usuario estaba arrastrando
+        track.querySelectorAll('.gallery-card').forEach(card => {
+            card.addEventListener('click', (e) => {
+                if (hasDragged) {
+                    e.stopImmediatePropagation();
+                    e.preventDefault();
+                }
+            }, true);
+        });
+    }
+
+    initPintxosSlider();
+
+    // 10. Slider Cinemático de Videos de Brasa en el Hero (Parrilla al Carbón & Txuletón 1kg)
+    function initHeroVideoSlider() {
+        const slides = document.querySelectorAll('.hero-video-slide');
+        const pills = document.querySelectorAll('.hero-vctrl-pill');
+        const prevBtn = document.getElementById('heroPrevVideo');
+        const nextBtn = document.getElementById('heroNextVideo');
+        const stage = document.getElementById('heroCenterStage');
+        if (!slides.length) return;
+
+        let currentSlide = 0;
+        const totalSlides = slides.length;
+        let autoRotateTimer = null;
+        const ROTATE_INTERVAL = 7500; // 7.5 segundos entre cortes
+
+        function goToSlide(index) {
+            currentSlide = (index + totalSlides) % totalSlides;
+
+            slides.forEach((slide, i) => {
+                if (i === currentSlide) {
+                    slide.classList.add('active');
+                    const vid = slide.querySelector('video');
+                    if (vid) {
+                        vid.play().catch(() => {});
+                    }
+                } else {
+                    slide.classList.remove('active');
+                }
+            });
+
+            pills.forEach((pill, i) => {
+                if (i === currentSlide) {
+                    pill.classList.add('active');
+                } else {
+                    pill.classList.remove('active');
+                }
+            });
+        }
+
+        function startAutoRotate() {
+            stopAutoRotate();
+            autoRotateTimer = setInterval(() => {
+                goToSlide(currentSlide + 1);
+            }, ROTATE_INTERVAL);
+        }
+
+        function stopAutoRotate() {
+            if (autoRotateTimer) {
+                clearInterval(autoRotateTimer);
+                autoRotateTimer = null;
+            }
+        }
+
+        if (prevBtn) {
+            prevBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                goToSlide(currentSlide - 1);
+                startAutoRotate();
+            });
+        }
+
+        if (nextBtn) {
+            nextBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                goToSlide(currentSlide + 1);
+                startAutoRotate();
+            });
+        }
+
+        pills.forEach((pill) => {
+            pill.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                const target = parseInt(pill.getAttribute('data-slide-target') || '0', 10);
+                goToSlide(target);
+                startAutoRotate();
+            });
+        });
+
+        if (stage) {
+            stage.addEventListener('mouseenter', stopAutoRotate);
+            stage.addEventListener('mouseleave', startAutoRotate);
+
+            // Soporte de gesto táctil (Swipe) en móvil
+            let touchStartX = 0;
+            let touchEndX = 0;
+            stage.addEventListener('touchstart', (e) => {
+                touchStartX = e.changedTouches[0].screenX;
+            }, { passive: true });
+
+            stage.addEventListener('touchend', (e) => {
+                touchEndX = e.changedTouches[0].screenX;
+                const diff = touchStartX - touchEndX;
+                if (Math.abs(diff) > 40) {
+                    if (diff > 0) {
+                        goToSlide(currentSlide + 1);
+                    } else {
+                        goToSlide(currentSlide - 1);
+                    }
+                    startAutoRotate();
+                }
+            }, { passive: true });
+        }
+
+        startAutoRotate();
+    }
+
+    initHeroVideoSlider();
 });
 
 

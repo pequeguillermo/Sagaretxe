@@ -32,16 +32,13 @@
                     </h3>
                     <div style="display: flex; flex-direction: column; gap: 10px; margin-bottom: 25px; font-size: 1.05rem;">
                         <a href="tel:+34914462588" style="color: var(--gold-lana); font-weight: 700; font-size: 1.25rem;">
-                            <i class="fa-solid fa-phone"></i> (+34) 914 46 25 88 <small style="font-size: 0.8rem; color: var(--text-muted); font-weight: 400;"><?= isEn() ? '(Main Phone)' : '(Fijo principal)' ?></small>
+                            <i class="fa-solid fa-phone"></i> (+34) 914.462.588 <small style="font-size: 0.8rem; color: var(--text-muted); font-weight: 400;"><?= isEn() ? '(Main Phone)' : '(Fijo principal)' ?></small>
                         </a>
                         <a href="tel:+34914456023" style="color: var(--text-light);">
-                            <i class="fa-solid fa-phone"></i> (+34) 914 45 60 23 <small style="font-size: 0.8rem; color: var(--text-muted);"><?= isEn() ? '(Secondary)' : '(Línea 2)' ?></small>
-                        </a>
-                        <a href="tel:+34622179060" style="color: var(--text-light);">
-                            <i class="fa-solid fa-mobile-screen"></i> 622 179 060 <small style="font-size: 0.8rem; color: var(--text-muted);">(WhatsApp)</small>
+                            <i class="fa-solid fa-phone"></i> (+34) 914.456.023 <small style="font-size: 0.8rem; color: var(--text-muted);"><?= isEn() ? '(Secondary)' : '(Línea 2)' ?></small>
                         </a>
                         <a href="tel:+34633179060" style="color: var(--text-light);">
-                            <i class="fa-solid fa-mobile-screen"></i> 633 179 060 <small style="font-size: 0.8rem; color: var(--text-muted);"><?= isEn() ? '(Mobile)' : '(Móvil)' ?></small>
+                            <i class="fa-solid fa-mobile-screen"></i> 633.179.060 <small style="font-size: 0.8rem; color: var(--text-muted);">(WhatsApp / Móvil)</small>
                         </a>
                     </div>
 

@@ -1,26 +1,32 @@
-DirectoryIndex index.php
+# Sagaretxe – Configuración Apache / Plesk / cPanel
+DirectoryIndex index.php public/index.php
 
 <IfModule mod_rewrite.c>
     RewriteEngine On
     RewriteBase /
 
-    # 1. Redirigir 301 de forma canónica si el navegador entra a /public o /public/...
+    # 1. Proteger directorios del sistema y control de versiones
+    RewriteRule ^app(/|$) - [F,L,NC]
+    RewriteRule ^scratch(/|$) - [F,L,NC]
+    RewriteRule ^\.git - [F,L,NC]
+
+    # 2. Redirigir de forma canónica si el navegador entra a /public o /public/...
     RewriteCond %{THE_REQUEST} \s/+public/([^\s?]*) [NC]
     RewriteRule ^public/(.*)$ /%1 [R=301,L,NE]
 
-    # 2. Servir recursos estáticos desde public/assets directamente
-    RewriteRule ^assets/(.*)$ public/assets/$1 [L]
-
-    # 3. Si el archivo o directorio existe tal cual en la raíz, servirlo
+    # 3. Si el archivo o directorio existe tal cual en la raíz, servirlo directamente
     RewriteCond %{REQUEST_FILENAME} -f [OR]
     RewriteCond %{REQUEST_FILENAME} -d
     RewriteRule ^ - [L]
 
-    # 4. Si el archivo o recurso existe dentro de public/, servirlo
-    RewriteCond %{DOCUMENT_ROOT}/public/$1 -f [OR]
-    RewriteCond %{DOCUMENT_ROOT}/public/$1 -d
+    # 4. Si el archivo solicitado existe dentro de public/, servirlo directamente
+    RewriteCond %{DOCUMENT_ROOT}/public%{REQUEST_URI} -f
     RewriteRule ^(.*)$ public/$1 [L]
 
-    # 5. Enrutar todas las peticiones dinámicas al controlador frontal
+    # 5. Mapeo transparente para assets estáticos (CSS, JS, imágenes, fuentes, vídeos)
+    RewriteRule ^assets/(.*)$ public/assets/$1 [L]
+
+    # 6. Enrutar todas las peticiones dinámicas restantes al Front Controller
+    RewriteCond %{REQUEST_URI} !^/public/index\.php$ [NC]
     RewriteRule ^(.*)$ public/index.php [QSA,L]
 </IfModule>

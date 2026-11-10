@@ -6,24 +6,48 @@
 
 declare(strict_types=1);
 
-// Cargar configuración global
-require_once __DIR__ . '/../app/Config/config.php';
+// Definir rutas base del sistema si no vienen definidas desde el index.php raíz
+if (!defined('ROOT_PATH')) {
+    define('ROOT_PATH', dirname(__DIR__));
+}
+if (!defined('APP_PATH')) {
+    define('APP_PATH', ROOT_PATH . '/app');
+}
+if (!defined('PUBLIC_PATH')) {
+    define('PUBLIC_PATH', __DIR__);
+}
 
-// Autoloader PSR-4 simple para el namespace App
+// Cargar configuración global
+$configFile = APP_PATH . '/Config/config.php';
+if (!file_exists($configFile)) {
+    $configFile = __DIR__ . '/../app/Config/config.php';
+}
+require_once $configFile;
+
+// Autoloader PSR-4 para el namespace App con detección de mayúsculas/minúsculas
 spl_autoload_register(function ($class) {
     $prefix = 'App\\';
-    $baseDir = __DIR__ . '/../app/';
-
     $len = strlen($prefix);
     if (strncmp($prefix, $class, $len) !== 0) {
         return;
     }
 
     $relativeClass = substr($class, $len);
-    $file = $baseDir . str_replace('\\', '/', $relativeClass) . '.php';
+    $relFile = str_replace('\\', '/', $relativeClass) . '.php';
 
-    if (file_exists($file)) {
-        require $file;
+    $candidateBases = [
+        defined('APP_PATH') ? APP_PATH : null,
+        __DIR__ . '/../app',
+        dirname(__DIR__) . '/app'
+    ];
+
+    foreach ($candidateBases as $base) {
+        if (!$base) continue;
+        $target = $base . '/' . $relFile;
+        if (file_exists($target)) {
+            require $target;
+            return;
+        }
     }
 });
 

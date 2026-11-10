@@ -95,11 +95,3 @@
         </div>
     </div>
 </section>
-
-<!-- Lightbox Modal -->
-<div class="lightbox-modal" id="lightboxModal">
-    <button class="lightbox-close" id="closeLightbox" aria-label="Cerrar imagen">&times;</button>
-    <div class="lightbox-img-wrapper">
-        <img src="" alt="Vista ampliada" class="lightbox-img" id="lightboxImg">
-    </div>
-</div>

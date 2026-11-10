@@ -1,6 +1,13 @@
 <?php
 // Configuración Global de la Aplicación Sagaretxe
 
+if (!defined('ROOT_PATH')) {
+    define('ROOT_PATH', dirname(__DIR__, 2));
+}
+if (!defined('APP_PATH')) {
+    define('APP_PATH', dirname(__DIR__));
+}
+
 define('APP_NAME', 'Sagaretxe – La Sidrería Vasca en Madrid');
 define('APP_TAGLINE', 'Pintxos, Carnes a la Brasa y Tradición Vasca en Chamberí');
 define('APP_DESCRIPTION', 'Sidrería Sagaretxe en el barrio de Chamberí (Madrid). Especialistas en auténtica gastronomía vasca: barra con más de 150 pintxos, txuleta de vaca vieja al carbón de encina, pescados al estilo Donostia y sidra al txotx.');
@@ -26,10 +33,9 @@ define('API_BASE_URL', rtrim($apiEndpoint, '/'));
 
 // Datos de Contacto y Ubicación
 define('RESTAURANT_ADDRESS', 'C/ Eloy Gonzalo, 26, 28010 Madrid (Chamberí)');
-define('RESTAURANT_PHONE_1', '914 46 25 88');
-define('RESTAURANT_PHONE_2', '914 45 60 23');
-define('RESTAURANT_PHONE_MOBILE_1', '622 179 060');
-define('RESTAURANT_PHONE_MOBILE_2', '633 179 060');
+define('RESTAURANT_PHONE_1', '914.462.588');
+define('RESTAURANT_PHONE_2', '914.456.023');
+define('RESTAURANT_PHONE_MOBILE_1', '633.179.060');
 define('RESTAURANT_EMAIL', 'info@sagaretxe.net');
 
 // Horarios

@@ -1,44 +1,133 @@
 <!-- ==========================================================================
      SAGARETXE – BARRA DE PINTXOS VASCOS (ESTÉTICA LANA)
-     Bilingüe ES / EN
+     Hero Fotográfico, Slider de Pintxos Reales y Bilingüe ES / EN
      ========================================================================== -->
 
-<section class="section">
+<!-- 1. HERO HEADER PANORÁMICO CON FOTOGRAFÍA OFICIAL DE BARRA DE PINTXOS -->
+<section class="pintxos-hero-header">
+    <div class="pintxos-hero-bg" style="background-image: url('<?= BASE_URL ?>/assets/images/pintxos-hero.jpg');"></div>
+    <div class="pintxos-hero-overlay"></div>
+    <div class="container pintxos-hero-content">
+        <span class="section-subtag-lana"><?= isEn() ? 'DONOSTIA TAVERN CULTURE • CHAMBERÍ SINCE 1999' : 'CULTURA DE BARRA DONOSTIARRA • CHAMBERÍ DESDE 1999' ?></span>
+        <h1 class="section-title-lana"><?= isEn() ? 'The Pintxos Counter' : 'Nuestra Barra de Pintxos' ?></h1>
+        <p class="section-description pintxos-hero-desc">
+            <?= isEn() 
+                ? 'At our spectacular counter you will encounter an ever-revolving selection of freshly crafted hot and cold pintxos. A lively tradition where market-fresh ingredients set the rhythm of the kitchen.' 
+                : 'En nuestra espectacular barra encontrarás una incesante variedad de pintxos fríos y calientes recién elaborados. Una experiencia viva donde cada visita es diferente y el producto fresco de temporada marca el ritmo de los fogones.' ?>
+        </p>
+
+        <div class="pintxos-hero-badges">
+            <span class="pintxos-hbadge"><i class="fa-solid fa-fire-burner"></i> +150 <?= isEn() ? 'Varieties' : 'Variedades' ?></span>
+            <span class="pintxos-hbadge"><i class="fa-solid fa-clock-rotate-left"></i> <?= isEn() ? 'Continuous Kitchen Rotation' : 'Rotación Continua' ?></span>
+            <span class="pintxos-hbadge"><i class="fa-solid fa-wine-glass"></i> <?= isEn() ? 'Cider "Al Txotx" & Txakoli' : 'Sidra al Txotx y Txacolí' ?></span>
+        </div>
+
+        <div class="pintxos-hero-actions">
+            <a href="<?= langUrl('/reservas') ?>" class="btn-lana-reserve">
+                <span class="btn-lana-dot"></span>
+                <span><?= __('nav_reserve') ?></span>
+            </a>
+            <a href="<?= langUrl('/carta') ?>" class="btn-lana-outline">
+                <span><?= __('nav_menu') ?></span>
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- 2. SLIDER / CARRUSEL INTERACTIVO DE PINTXOS REALES DE SAGARETXE -->
+<section class="pintxos-slider-section" id="vitrina">
     <div class="container">
-        <div class="section-header-lana">
-            <span class="section-subtag-lana"><?= isEn() ? 'DONOSTIA TAVERN CULTURE' : 'CULTURA DE BARRA DONOSTIARRA' ?></span>
-            <h1 class="section-title-lana"><?= isEn() ? 'The Pintxos Counter' : 'Nuestra Barra de Pintxos' ?></h1>
-            <p class="section-description" style="max-width: 720px; margin: 0 auto 24px auto;">
-                <?= isEn() 
-                    ? 'At our spectacular counter you will encounter an ever-revolving selection of freshly crafted hot and cold pintxos. A lively tradition where market-fresh ingredients set the rhythm of the kitchen.' 
-                    : 'En nuestra espectacular barra encontrarás una incesante variedad de pintxos fríos y calientes recién elaborados. Una experiencia viva donde cada visita es diferente y el producto fresco de temporada marca el ritmo de los fogones.' ?>
-            </p>
-            <div style="display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; margin-bottom: 24px;">
-                <a href="<?= langUrl('/reservas') ?>" class="btn-lana-reserve">
-                    <span class="btn-lana-dot"></span>
-                    <span><?= __('nav_reserve') ?></span>
-                </a>
-                <a href="<?= langUrl('/carta') ?>" class="btn-lana-outline">
-                    <span><?= __('nav_menu') ?></span>
-                    <i class="fa-solid fa-arrow-right"></i>
-                </a>
+        <div class="pintxos-slider-header">
+            <div>
+                <span class="section-subtag-lana"><?= isEn() ? 'VISUAL SHOWCASE • DIRECT FROM THE KITCHEN' : 'MUESTRARIO VISUAL • DIRECTO DE LOS FOGONES' ?></span>
+                <h2 class="section-title-lana" style="margin-bottom: 6px;"><?= isEn() ? 'Iconic Pintxos from Our Counter' : 'La Vitrina Viva de Pintxos' ?></h2>
+                <p class="cuts-intro-desc" style="margin: 0;">
+                    <?= isEn() 
+                        ? 'Explore the artisan bites that leave our grill and cold stations daily. Click any card to expand.' 
+                        : 'Descubre los bocados que salen continuamente de nuestras brasas y estación fría. Haz clic para ampliar.' ?>
+                </p>
             </div>
-            <div class="gold-hairline-sep"></div>
+            <div class="pintxos-slider-controls">
+                <button type="button" class="pintxos-nav-btn" id="pintxosSlidePrev" aria-label="<?= isEn() ? 'Previous Pintxos' : 'Pintxos Anteriores' ?>">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </button>
+                <button type="button" class="pintxos-nav-btn" id="pintxosSlideNext" aria-label="<?= isEn() ? 'Next Pintxos' : 'Siguientes Pintxos' ?>">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </button>
+            </div>
         </div>
 
-        <!-- Concepto de rotación diaria -->
-        <div style="background: #12151b; border: 1px solid var(--border-accent); border-radius: var(--radius-sm); padding: 24px 30px; margin-bottom: 45px; text-align: center;">
-            <p style="font-size: 1.05rem; color: var(--text-white); margin-bottom: 8px;">
-                <i class="fa-solid fa-clock-rotate-left" style="color: var(--gold-lana); margin-right: 8px;"></i>
-                <strong><?= isEn() ? 'Live Daily Rotation:' : 'Rotación y Frescura en Directo:' ?></strong> <?= isEn() ? 'Over 150 varieties continuously prepared throughout the day.' : 'Disponemos habitualmente de decenas de variedades en rotación continua.' ?>
-            </p>
-            <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 0;">
-                <?= isEn() 
-                    ? 'The selection evolves based on fish market arrivals and our kitchen team’s creations: the true spirit of a Basque tavern is savoring whichever hot skewer leaves the grill right now!' 
-                    : 'La selección varía según el día, la lonja y las creaciones del equipo de cocina: ¡la magia de la taberna vasca reside en dejarse sorprender por el pintxo que sale caliente en cada momento!' ?>
-            </p>
+        <div class="pintxos-slider-wrapper">
+            <div class="pintxos-slider-track" id="pintxosSliderTrack">
+                <?php
+                $pintxosPhotos = [
+                    'pintxo-01.jpg',
+                    'pintxo-02.jpg',
+                    'pintxo-03.jpg',
+                    'pintxo-04.jpg',
+                    'pintxo-05.jpg',
+                    'pintxo-06.jpg',
+                    'pintxo-07.jpg',
+                    'pintxo-08.jpg',
+                    'pintxo-09.jpg',
+                    'pintxo-10.jpg',
+                    'pintxo-11.jpg',
+                    'pintxo-12.jpg',
+                    'pintxo-13.jpg',
+                    'pintxo-14.jpg',
+                    'pintxo-15.jpg',
+                    'pintxo-16.jpg',
+                ];
+
+                foreach ($pintxosPhotos as $img):
+                ?>
+                <div class="pintxo-slide-card gallery-card" title="<?= isEn() ? 'Click to enlarge photo' : 'Haz clic para ampliar la foto' ?>">
+                    <div class="pintxo-slide-img-wrap">
+                        <img src="<?= BASE_URL ?>/assets/images/pintxos/<?= $img ?>" alt="Pintxo Sagaretxe" class="pintxo-slide-img" loading="lazy">
+                        <span class="pintxo-slide-zoom-icon"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
+                    </div>
+                </div>
+                <?php endforeach; ?>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 3. CONTENIDO EDITORIAL, FILOSOFÍA DE BARRA Y FOTO REAL DE PINTXOS CALIENTES -->
+<section class="section" style="padding-top: 65px; padding-bottom: 75px;">
+    <div class="container">
+
+        <!-- Caja Destacada 50/50: Filosofía de la Barra Sagaretxe con la Fotografía Real pitxos.jpg -->
+        <div class="pintxos-showcase-feature">
+            <div class="pintxos-showcase-thumb gallery-card" title="<?= isEn() ? 'Click to view photo' : 'Haz clic para ampliar' ?>">
+                <img src="<?= BASE_URL ?>/assets/images/pitxos.jpg" alt="<?= isEn() ? 'Fresh Pintxos from the Grill' : 'Pintxos recién salidos de la cocina' ?>" loading="lazy">
+                <span class="pintxos-showcase-tag"><?= isEn() ? 'LIVE KITCHEN' : 'FOGONES EN DIRECTO' ?></span>
+                <span class="pintxo-slide-zoom-icon"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
+            </div>
+            <div class="pintxos-showcase-body">
+                <span class="section-subtag-lana"><?= isEn() ? 'DONOSTIA TRADITION' : 'TRADICIÓN Y ESPONTANEIDAD' ?></span>
+                <h2 style="font-family: var(--font-serif); font-size: 2rem; color: #ffffff; margin-bottom: 16px; line-height: 1.25;">
+                    <?= isEn() ? 'The Magic of Freshly Prepared Basque Tapas' : 'El Placer de Dejarse Sorprender en la Barra' ?>
+                </h2>
+                <p style="color: var(--text-light); line-height: 1.8; margin-bottom: 16px; font-size: 0.98rem;">
+                    <?= isEn() 
+                        ? 'Our philosophy is rooted in savoring the moment and discovering which hot skewer leaves the kitchen right as you arrive. Because freshness dictates our counter, selection evolves with market arrivals and daily inspiration.' 
+                        : 'Nuestra propuesta se basa en disfrutar del momento y descubrir qué pintxo te toca, haciendo de cada visita una experiencia diferente. Ofrecemos una gran variedad basada en los que solemos disponer habitualmente, pero la rotación de cocina saca bandejas calientes recién hechas al toque de campana.' ?>
+                </p>
+                <div class="pintxos-quote-callout">
+                    <i class="fa-solid fa-quote-left" style="color: var(--gold-lana); font-size: 1.2rem; margin-right: 10px;"></i>
+                    <span>
+                        <?= isEn() 
+                            ? 'Pair your pintxos with authentic natural cider poured straight from our casks ("Txotx") or a crisp glass of Basque Txakoli.' 
+                            : 'Acompáñalos con la auténtica «sidra al txotx» que podrás servirte directamente de nuestras kupelas o con una copa de txacolí.' ?>
+                    </span>
+                </div>
+            </div>
         </div>
 
+        <!-- 4. CATEGORÍAS DETALLADAS DE PINTXOS -->
+        
         <!-- Bloque 1: Pintxos Fríos y Tradición Cantábrica -->
         <div class="menu-category-section">
             <div class="menu-category-header">
@@ -117,7 +206,7 @@
         </div>
 
         <!-- Banner Platos Combinados 8 y 12 Pintxos -->
-        <div class="pintxos-combos-banner" style="background: #12151b; border: 1px solid var(--border-accent); border-radius: var(--radius-sm);">
+        <div class="pintxos-combos-banner" style="background: #12151b; border: 1px solid var(--border-accent); border-radius: var(--radius-sm); margin-top: 45px;">
             <div class="combos-text">
                 <h3 style="font-family: var(--font-serif); font-size: 1.8rem; color: #fff;"><?= isEn() ? 'Assorted Tasting Trays (8 & 12 Pintxos)' : 'Tablas Combinadas de 8 y 12 Pintxos' ?></h3>
                 <p style="color: var(--text-light); line-height: 1.8;">

@@ -41,7 +41,7 @@
                         <i class="fa-solid fa-phone" style="font-size: 1.6rem; color: var(--cider-amber);"></i>
                         <div>
                             <span style="font-size: 0.85rem; color: var(--text-muted); display: block;">Atención telefónica directa para eventos:</span>
-                            <strong style="font-size: 1.15rem; color: #fff;">914 46 25 88 / 622 179 060</strong>
+                            <strong style="font-size: 1.15rem; color: #fff;">(+34) 914.462.588 // 633.179.060</strong>
                         </div>
                     </div>
                 </div>

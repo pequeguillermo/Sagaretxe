@@ -20,15 +20,13 @@
                 <div class="gh-phone-pairs">
                     <div class="gh-pair">
                         <span class="gh-type"><?= isEn() ? 'Landlines:' : 'Fijos:' ?></span>
-                        <a href="tel:+34914462588" class="gh-phone-link highlight">(+34) 914 46 25 88</a>
+                        <a href="tel:+34914462588" class="gh-phone-link highlight">(+34) 914.462.588</a>
                         <span class="gh-sep">//</span>
-                        <a href="tel:+34914456023" class="gh-phone-link">914 45 60 23</a>
+                        <a href="tel:+34914456023" class="gh-phone-link">914.456.023</a>
                     </div>
                     <div class="gh-pair">
-                        <span class="gh-type"><?= isEn() ? 'Mobiles / WhatsApp:' : 'Móviles / WhatsApp:' ?></span>
-                        <a href="tel:+34622179060" class="gh-phone-link mobile">622 179 060</a>
-                        <span class="gh-sep">//</span>
-                        <a href="tel:+34633179060" class="gh-phone-link mobile">633 179 060</a>
+                        <span class="gh-type"><?= isEn() ? 'Mobile / WhatsApp:' : 'Móvil / WhatsApp:' ?></span>
+                        <a href="tel:+34633179060" class="gh-phone-link mobile">633.179.060</a>
                     </div>
                 </div>
             </div>
@@ -58,17 +56,15 @@
                     <div class="gpn-phone-block">
                         <span class="gpn-phone-type"><i class="fa-solid fa-phone"></i> <?= isEn() ? 'Landlines:' : 'Teléfonos Fijos:' ?></span>
                         <div class="gpn-phone-links">
-                            <a href="tel:+34914462588" class="gpn-link highlight"><i class="fa-solid fa-phone"></i> (+34) 914 46 25 88</a>
+                            <a href="tel:+34914462588" class="gpn-link highlight"><i class="fa-solid fa-phone"></i> (+34) 914.462.588</a>
                             <span class="gpn-sep">//</span>
-                            <a href="tel:+34914456023" class="gpn-link">914 45 60 23</a>
+                            <a href="tel:+34914456023" class="gpn-link">914.456.023</a>
                         </div>
                     </div>
                     <div class="gpn-phone-block">
-                        <span class="gpn-phone-type"><i class="fa-solid fa-mobile-screen"></i> <?= isEn() ? 'Mobiles / WhatsApp:' : 'Móviles / WhatsApp:' ?></span>
+                        <span class="gpn-phone-type"><i class="fa-solid fa-mobile-screen"></i> <?= isEn() ? 'Mobile / WhatsApp:' : 'Móvil / WhatsApp:' ?></span>
                         <div class="gpn-phone-links">
-                            <a href="tel:+34622179060" class="gpn-link mobile"><i class="fa-solid fa-mobile-screen"></i> 622 179 060</a>
-                            <span class="gpn-sep">//</span>
-                            <a href="tel:+34633179060" class="gpn-link mobile">633 179 060</a>
+                            <a href="tel:+34633179060" class="gpn-link mobile"><i class="fa-solid fa-mobile-screen"></i> 633.179.060</a>
                         </div>
                     </div>
                 </div>
@@ -138,17 +134,15 @@
                     </span>
                     <div class="group-card-booking-phones">
                         <a href="tel:+34914462588" class="btn-card-phone btn-card-main" title="Llamar al fijo">
-                            <i class="fa-solid fa-phone"></i> 914 46 25 88
+                            <i class="fa-solid fa-phone"></i> 914.462.588
                         </a>
-                        <a href="tel:+34622179060" class="btn-card-phone btn-card-mobile" title="Llamar o WhatsApp">
-                            <i class="fa-solid fa-mobile-screen"></i> 622 179 060
+                        <a href="tel:+34633179060" class="btn-card-phone btn-card-mobile" title="Llamar o WhatsApp">
+                            <i class="fa-solid fa-mobile-screen"></i> 633.179.060
                         </a>
                     </div>
                     <div class="group-card-subphones">
-                        <span><?= isEn() ? 'Other lines:' : 'Otras líneas:' ?></span>
-                        <a href="tel:+34914456023">914 45 60 23</a>
-                        <span class="sep">//</span>
-                        <a href="tel:+34633179060">633 179 060</a>
+                        <span><?= isEn() ? 'Other line:' : 'Otra línea:' ?></span>
+                        <a href="tel:+34914456023">914.456.023</a>
                     </div>
                 </div>
             </div>
@@ -203,17 +197,15 @@
                     </span>
                     <div class="group-card-booking-phones">
                         <a href="tel:+34914462588" class="btn-card-phone btn-card-main" title="Llamar al fijo">
-                            <i class="fa-solid fa-phone"></i> 914 46 25 88
+                            <i class="fa-solid fa-phone"></i> 914.462.588
                         </a>
-                        <a href="tel:+34622179060" class="btn-card-phone btn-card-mobile" title="Llamar o WhatsApp">
-                            <i class="fa-solid fa-mobile-screen"></i> 622 179 060
+                        <a href="tel:+34633179060" class="btn-card-phone btn-card-mobile" title="Llamar o WhatsApp">
+                            <i class="fa-solid fa-mobile-screen"></i> 633.179.060
                         </a>
                     </div>
                     <div class="group-card-subphones">
-                        <span><?= isEn() ? 'Other lines:' : 'Otras líneas:' ?></span>
-                        <a href="tel:+34914456023">914 45 60 23</a>
-                        <span class="sep">//</span>
-                        <a href="tel:+34633179060">633 179 060</a>
+                        <span><?= isEn() ? 'Other line:' : 'Otra línea:' ?></span>
+                        <a href="tel:+34914456023">914.456.023</a>
                     </div>
                 </div>
             </div>
@@ -268,17 +260,15 @@
                     </span>
                     <div class="group-card-booking-phones">
                         <a href="tel:+34914462588" class="btn-card-phone btn-card-main" title="Llamar al fijo">
-                            <i class="fa-solid fa-phone"></i> 914 46 25 88
+                            <i class="fa-solid fa-phone"></i> 914.462.588
                         </a>
-                        <a href="tel:+34622179060" class="btn-card-phone btn-card-mobile" title="Llamar o WhatsApp">
-                            <i class="fa-solid fa-mobile-screen"></i> 622 179 060
+                        <a href="tel:+34633179060" class="btn-card-phone btn-card-mobile" title="Llamar o WhatsApp">
+                            <i class="fa-solid fa-mobile-screen"></i> 633.179.060
                         </a>
                     </div>
                     <div class="group-card-subphones">
-                        <span><?= isEn() ? 'Other lines:' : 'Otras líneas:' ?></span>
-                        <a href="tel:+34914456023">914 45 60 23</a>
-                        <span class="sep">//</span>
-                        <a href="tel:+34633179060">633 179 060</a>
+                        <span><?= isEn() ? 'Other line:' : 'Otra línea:' ?></span>
+                        <a href="tel:+34914456023">914.456.023</a>
                     </div>
                 </div>
             </div>
@@ -334,17 +324,15 @@
                     </span>
                     <div class="group-card-booking-phones">
                         <a href="tel:+34914462588" class="btn-card-phone btn-card-main" title="Llamar al fijo">
-                            <i class="fa-solid fa-phone"></i> 914 46 25 88
+                            <i class="fa-solid fa-phone"></i> 914.462.588
                         </a>
-                        <a href="tel:+34622179060" class="btn-card-phone btn-card-mobile" title="Llamar o WhatsApp">
-                            <i class="fa-solid fa-mobile-screen"></i> 622 179 060
+                        <a href="tel:+34633179060" class="btn-card-phone btn-card-mobile" title="Llamar o WhatsApp">
+                            <i class="fa-solid fa-mobile-screen"></i> 633.179.060
                         </a>
                     </div>
                     <div class="group-card-subphones">
-                        <span><?= isEn() ? 'Other lines:' : 'Otras líneas:' ?></span>
-                        <a href="tel:+34914456023">914 45 60 23</a>
-                        <span class="sep">//</span>
-                        <a href="tel:+34633179060">633 179 060</a>
+                        <span><?= isEn() ? 'Other line:' : 'Otra línea:' ?></span>
+                        <a href="tel:+34914456023">914.456.023</a>
                     </div>
                 </div>
             </div>
@@ -401,17 +389,15 @@
                     </span>
                     <div class="group-card-booking-phones">
                         <a href="tel:+34914462588" class="btn-card-phone btn-card-main" title="Llamar al fijo">
-                            <i class="fa-solid fa-phone"></i> 914 46 25 88
+                            <i class="fa-solid fa-phone"></i> 914.462.588
                         </a>
-                        <a href="tel:+34622179060" class="btn-card-phone btn-card-mobile" title="Llamar o WhatsApp">
-                            <i class="fa-solid fa-mobile-screen"></i> 622 179 060
+                        <a href="tel:+34633179060" class="btn-card-phone btn-card-mobile" title="Llamar o WhatsApp">
+                            <i class="fa-solid fa-mobile-screen"></i> 633.179.060
                         </a>
                     </div>
                     <div class="group-card-subphones">
-                        <span><?= isEn() ? 'Other lines:' : 'Otras líneas:' ?></span>
-                        <a href="tel:+34914456023">914 45 60 23</a>
-                        <span class="sep">//</span>
-                        <a href="tel:+34633179060">633 179 060</a>
+                        <span><?= isEn() ? 'Other line:' : 'Otra línea:' ?></span>
+                        <a href="tel:+34914456023">914.456.023</a>
                     </div>
                 </div>
             </div>
@@ -461,17 +447,15 @@
                     </span>
                     <div class="group-card-booking-phones">
                         <a href="tel:+34914462588" class="btn-card-phone btn-card-main" title="Llamar al fijo">
-                            <i class="fa-solid fa-phone"></i> 914 46 25 88
+                            <i class="fa-solid fa-phone"></i> 914.462.588
                         </a>
-                        <a href="tel:+34622179060" class="btn-card-phone btn-card-mobile" title="Llamar o WhatsApp">
-                            <i class="fa-solid fa-mobile-screen"></i> 622 179 060
+                        <a href="tel:+34633179060" class="btn-card-phone btn-card-mobile" title="Llamar o WhatsApp">
+                            <i class="fa-solid fa-mobile-screen"></i> 633.179.060
                         </a>
                     </div>
                     <div class="group-card-subphones">
-                        <span><?= isEn() ? 'Other lines:' : 'Otras líneas:' ?></span>
-                        <a href="tel:+34914456023">914 45 60 23</a>
-                        <span class="sep">//</span>
-                        <a href="tel:+34633179060">633 179 060</a>
+                        <span><?= isEn() ? 'Other line:' : 'Otra línea:' ?></span>
+                        <a href="tel:+34914456023">914.456.023</a>
                     </div>
                 </div>
             </div>
@@ -491,17 +475,15 @@
                 <div class="group-bphone-col">
                     <span class="group-bphone-type"><i class="fa-solid fa-phone"></i> <?= isEn() ? 'Landlines:' : 'Teléfonos Fijos:' ?></span>
                     <div class="group-bphone-numbers">
-                        <a href="tel:+34914462588" class="group-bphone-link highlight"><i class="fa-solid fa-phone"></i> (+34) 914 46 25 88</a>
+                        <a href="tel:+34914462588" class="group-bphone-link highlight"><i class="fa-solid fa-phone"></i> (+34) 914.462.588</a>
                         <span class="group-bphone-sep">//</span>
-                        <a href="tel:+34914456023" class="group-bphone-link">914 45 60 23</a>
+                        <a href="tel:+34914456023" class="group-bphone-link">914.456.023</a>
                     </div>
                 </div>
                 <div class="group-bphone-col">
-                    <span class="group-bphone-type"><i class="fa-solid fa-mobile-screen"></i> <?= isEn() ? 'Mobiles / WhatsApp:' : 'Móviles / WhatsApp:' ?></span>
+                    <span class="group-bphone-type"><i class="fa-solid fa-mobile-screen"></i> <?= isEn() ? 'Mobile / WhatsApp:' : 'Móvil / WhatsApp:' ?></span>
                     <div class="group-bphone-numbers">
-                        <a href="tel:+34622179060" class="group-bphone-link mobile"><i class="fa-solid fa-mobile-screen"></i> 622 179 060</a>
-                        <span class="group-bphone-sep">//</span>
-                        <a href="tel:+34633179060" class="group-bphone-link mobile">633 179 060</a>
+                        <a href="tel:+34633179060" class="group-bphone-link mobile"><i class="fa-solid fa-mobile-screen"></i> 633.179.060</a>
                     </div>
                 </div>
             </div>

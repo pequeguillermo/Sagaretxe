@@ -66,7 +66,9 @@ class Router {
             '/contact' => '/contacto',
             '/group-menus' => '/menus',
             '/gallery' => '/galeria',
-            '/events' => '/eventos'
+            '/events' => '/eventos',
+            '/pintxos-bar' => '/pintxos',
+            '/tapas' => '/pintxos'
         ];
 
         if (isset($englishAliases[$uri])) {

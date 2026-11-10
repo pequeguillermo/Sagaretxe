@@ -6,14 +6,25 @@
 <!-- 1. HERO ATMOSFÉRICO: MARCO EDITORIAL ALREDEDOR DEL FUEGO CENTRAL -->
 <section class="hero-cinematic-lana hero-frame-mode" id="heroSection">
     
-    <!-- Centro Visual / Escenario Panorámico para Video de Carne a la Brasa -->
-    <div class="hero-center-stage">
-        <video class="hero-center-video" autoplay loop muted playsinline poster="<?= BASE_URL ?>/assets/images/hero-impacto.jpg">
-            <source src="<?= BASE_URL ?>/assets/videos/carne-brasa.mp4" type="video/mp4">
-            <source src="<?= BASE_URL ?>/assets/videos/carne-brasa.webm" type="video/webm">
-        </video>
+    <!-- Centro Visual / Escenario Panorámico para Video de Carne a la Brasa & Slider Cinemático -->
+    <div class="hero-center-stage" id="heroCenterStage">
+        <!-- Slide 0: Corte a la Brasa Tradicional -->
+        <div class="hero-video-slide active" data-slide-index="0" id="heroSlide0">
+            <video class="hero-center-video" autoplay loop muted playsinline poster="<?= BASE_URL ?>/assets/images/hero-impacto.jpg">
+                <source src="<?= BASE_URL ?>/assets/videos/carne-brasa.mp4" type="video/mp4">
+            </video>
+        </div>
+
+        <!-- Slide 1: El Gran Txuletón de 1kg con Hueso -->
+        <div class="hero-video-slide" data-slide-index="1" id="heroSlide1">
+            <video class="hero-center-video" autoplay loop muted playsinline poster="<?= BASE_URL ?>/assets/images/txuleton-1kg-hueso.jpg">
+                <source src="<?= BASE_URL ?>/assets/videos/txuleton-brasa.mp4" type="video/mp4">
+            </video>
+        </div>
+
         <!-- Viñeta radial e iluminación dramática para fundir el fuego con el marco negro -->
         <div class="hero-center-vignette"></div>
+
         <!-- Partículas Dinámicas de Brasa (Chispas de Carbón de Encina que flotan sobre el fuego) -->
         <div class="hero-embers" aria-hidden="true">
             <span class="ember ember-1"></span>
@@ -51,7 +62,7 @@
         <aside class="hero-edge-left" aria-label="Tradición de Brasa">
             <div class="edge-line-vert"></div>
             <div class="edge-vert-content">
-                <span class="vert-text"><?= isEn() ? 'PIL-PIL COD & CHARCOAL STEAKS' : 'BACALAO AL PIL PIL Y CHULETAS' ?></span>
+                <span class="vert-text"><?= isEn() ? 'PIL-PIL COD & CHARCOAL STEAKS' : 'BACALAO AL PIL PIL Y TXULETAS' ?></span>
                 <span class="vert-bullet">◆</span>
                 <span class="vert-text"><?= __('hero_badge_grill') ?></span>
             </div>
@@ -71,9 +82,30 @@
 
         <!-- Borde Inferior Horizontal: Título Sutil + Barra de Reserva Inmediata -->
         <div class="hero-edge-bottom">
-            <!-- Título editorial que corona la base del marco -->
+            <!-- Título editorial que corona la base del marco con Selector de Cortes -->
             <div class="hero-bottom-heading">
-                <div class="hero-mobile-subbadge"><?= isEn() ? 'PIL-PIL COD & CHARCOAL STEAKS' : 'BACALAO AL PIL PIL Y CHULETAS' ?></div>
+                <!-- Controles Elegantes del Slide (Estética Lana / Dark Luxury: Parrilla vs Txuletón) -->
+                <div class="hero-video-controls-lana" aria-label="<?= isEn() ? 'Charcoal Cuts Carousel' : 'Selector de Cortes a la Brasa' ?>">
+                    <button type="button" class="hero-vctrl-arrow hero-vctrl-prev" id="heroPrevVideo" aria-label="<?= isEn() ? 'Previous video' : 'Vídeo anterior' ?>" title="<?= isEn() ? 'Previous cut' : 'Corte anterior' ?>">
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </button>
+                    <div class="hero-vctrl-pills">
+                        <button type="button" class="hero-vctrl-pill active" data-slide-target="0" aria-label="Slide 1: Parrilla al Carbón">
+                            <span class="vctrl-dot"></span>
+                            <span class="vctrl-title"><?= isEn() ? 'Parrilla al Carbón' : 'Parrilla al Carbón' ?></span>
+                        </button>
+                        <span class="hero-vctrl-divider" aria-hidden="true"></span>
+                        <button type="button" class="hero-vctrl-pill" data-slide-target="1" aria-label="Slide 2: Txuletón 1kg con Hueso">
+                            <span class="vctrl-dot"></span>
+                            <span class="vctrl-title"><?= isEn() ? 'Txuletón 1kg c/ Hueso' : 'Txuletón 1kg c/ Hueso' ?></span>
+                        </button>
+                    </div>
+                    <button type="button" class="hero-vctrl-arrow hero-vctrl-next" id="heroNextVideo" aria-label="<?= isEn() ? 'Next video' : 'Siguiente vídeo' ?>" title="<?= isEn() ? 'Next cut' : 'Siguiente corte' ?>">
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </button>
+                </div>
+
+                <div class="hero-mobile-subbadge"><?= isEn() ? 'PIL-PIL COD & CHARCOAL STEAKS' : 'BACALAO AL PIL PIL Y TXULETAS' ?></div>
                 <h1 class="hero-frame-headline"><?= __('hero_title') ?></h1>
             </div>
 
@@ -155,7 +187,7 @@
             <!-- Pilar 1: La Parrilla -->
             <article class="trilogy-card-lana">
                 <div class="trilogy-img-wrapper">
-                    <img src="<?= BASE_URL ?>/assets/images/parrilla.jpg" alt="<?= __('pillar_1_title') ?>" class="trilogy-img" loading="lazy">
+                    <img src="<?= BASE_URL ?>/assets/images/parrilla-carbon.webp?v=2" alt="<?= __('pillar_1_title') ?>" class="trilogy-img trilogy-img-parrilla" loading="lazy">
                     <div class="trilogy-overlay"></div>
                     <span class="trilogy-badge"><?= isEn() ? 'EMBER & FIRE' : 'FUEGO Y BRASA' ?></span>
                 </div>
@@ -174,7 +206,7 @@
             <!-- Pilar 2: La Barra de Pintxos -->
             <article class="trilogy-card-lana">
                 <div class="trilogy-img-wrapper">
-                    <img src="<?= BASE_URL ?>/assets/images/barra-pintxos.jpg" alt="<?= __('pillar_2_title') ?>" class="trilogy-img" loading="lazy">
+                    <img src="<?= BASE_URL ?>/assets/images/labarradeptxos.jpg?v=2" alt="<?= __('pillar_2_title') ?>" class="trilogy-img trilogy-img-barra" loading="lazy">
                     <div class="trilogy-overlay"></div>
                     <span class="trilogy-badge">+150 <?= isEn() ? 'VARIETIES' : 'VARIEDADES' ?></span>
                 </div>
@@ -193,7 +225,7 @@
             <!-- Pilar 3: El Txotx de Kupela -->
             <article class="trilogy-card-lana">
                 <div class="trilogy-img-wrapper">
-                    <img src="<?= BASE_URL ?>/assets/images/kupelas.jpg" alt="<?= __('pillar_3_title') ?>" class="trilogy-img" loading="lazy">
+                    <img src="<?= BASE_URL ?>/assets/images/txotx.webp?v=2" alt="<?= __('pillar_3_title') ?>" class="trilogy-img trilogy-img-txotx" loading="lazy">
                     <div class="trilogy-overlay"></div>
                     <span class="trilogy-badge"><?= isEn() ? 'CIDER RITUAL' : 'RITUAL DEL TXOTX' ?></span>
                 </div>
@@ -266,7 +298,7 @@
             <!-- Corte 1 -->
             <div class="cut-item-card-lana">
                 <div class="cut-img-thumb">
-                    <img src="https://sagaretxe.net/wp-content/uploads/2023/10/IMG_0781-scaled-1.jpg" alt="<?= __('cut_1_name') ?>" loading="lazy">
+                    <img src="<?= BASE_URL ?>/assets/images/txuleta-vaca-vieja.jpg" alt="<?= __('cut_1_name') ?>" loading="lazy">
                 </div>
                 <div class="cut-card-body">
                     <div class="cut-top-row">
@@ -285,7 +317,7 @@
             <!-- Corte 2 -->
             <div class="cut-item-card-lana">
                 <div class="cut-img-thumb">
-                    <img src="<?= BASE_URL ?>/assets/images/hero-txuleta.jpg" alt="<?= __('cut_2_name') ?>" loading="lazy">
+                    <img src="<?= BASE_URL ?>/assets/images/txuleta-rubia-gallega.jpg" alt="<?= __('cut_2_name') ?>" loading="lazy">
                 </div>
                 <div class="cut-card-body">
                     <div class="cut-top-row">
@@ -304,7 +336,7 @@
             <!-- Corte 3 -->
             <div class="cut-item-card-lana">
                 <div class="cut-img-thumb">
-                    <img src="<?= BASE_URL ?>/assets/images/bacalao.jpg" alt="<?= __('cut_3_name') ?>" loading="lazy">
+                    <img src="<?= BASE_URL ?>/assets/images/tortilla-bacalao-feroe.jpg" alt="<?= __('cut_3_name') ?>" loading="lazy">
                 </div>
                 <div class="cut-card-body">
                     <div class="cut-top-row">
@@ -323,7 +355,7 @@
             <!-- Corte 4 -->
             <div class="cut-item-card-lana">
                 <div class="cut-img-thumb">
-                    <img src="https://sagaretxe.net/wp-content/uploads/2023/10/IMG_0813-scaled-1.jpg" alt="<?= __('cut_4_name') ?>" loading="lazy">
+                    <img src="<?= BASE_URL ?>/assets/images/bacalao-pilpil-cazuela.jpg" alt="<?= __('cut_4_name') ?>" loading="lazy">
                 </div>
                 <div class="cut-card-body">
                     <div class="cut-top-row">
@@ -365,45 +397,45 @@
 
         <div class="home-gallery-grid-lana">
             <div class="home-gallery-item hg-item-wide">
-                <img src="https://sagaretxe.net/wp-content/uploads/2023/10/DSC_0178-scaled-1.jpg" alt="Barra de pintxos Sagaretxe" loading="lazy">
+                <img src="<?= BASE_URL ?>/assets/images/labarradepitxos.jpg" alt="Barra de pintxos Sagaretxe" class="hg-img hg-img-bar" loading="lazy">
                 <div class="hg-overlay">
                     <span class="hg-tag"><?= isEn() ? 'PINTXOS COUNTER' : 'BARRA VIVA' ?></span>
                     <h4 class="hg-title"><?= isEn() ? 'Over 150 varieties crafted daily' : 'Más de 150 variedades elaboradas al día' ?></h4>
                 </div>
             </div>
             <div class="home-gallery-item">
-                <img src="https://sagaretxe.net/wp-content/uploads/2023/10/IMG_0781-scaled-1.jpg" alt="Txuleta a la brasa" loading="lazy">
+                <img src="<?= BASE_URL ?>/assets/images/parrilla-encina.jpg" alt="Parrilla de encina" class="hg-img hg-img-parrilla" loading="lazy">
                 <div class="hg-overlay">
                     <span class="hg-tag"><?= isEn() ? 'CHARCOAL GRILL' : 'PARRILLA DE ENCINA' ?></span>
                     <h4 class="hg-title"><?= isEn() ? 'Aged ribeyes on ember fire' : 'Txuletas maduradas a la brasa' ?></h4>
                 </div>
             </div>
             <div class="home-gallery-item">
-                <img src="https://sagaretxe.net/wp-content/uploads/2023/10/IMG_0438-scaled-1.jpg" alt="Kupelas de sidra natural" loading="lazy">
+                <img src="<?= BASE_URL ?>/assets/images/txotx.webp" alt="Kupelas de sidra natural" class="hg-img hg-img-txotx" loading="lazy">
                 <div class="hg-overlay">
                     <span class="hg-tag"><?= isEn() ? 'CIDER HOUSE' : 'RITUAL DEL TXOTX' ?></span>
                     <h4 class="hg-title"><?= isEn() ? 'Natural cider straight from the barrel' : 'Sidra natural al vuelo de kupela' ?></h4>
                 </div>
             </div>
             <div class="home-gallery-item">
-                <img src="https://sagaretxe.net/wp-content/uploads/2023/10/IMG_1022-scaled-1.jpg" alt="Salón comedor Sagaretxe" loading="lazy">
+                <img src="<?= BASE_URL ?>/assets/images/comedor.jpg" alt="Salón comedor Sagaretxe" class="hg-img hg-img-comedor" loading="lazy">
                 <div class="hg-overlay">
                     <span class="hg-tag"><?= isEn() ? 'THE DINING ROOM' : 'EL COMEDOR' ?></span>
                     <h4 class="hg-title"><?= isEn() ? 'Warm cider house atmosphere in Chamberí' : 'Ambiente acogedor en Chamberí' ?></h4>
                 </div>
             </div>
             <div class="home-gallery-item">
-                <img src="https://sagaretxe.net/wp-content/uploads/2023/10/IMG_0771-scaled-1.jpg" alt="Pintxos calientes al momento" loading="lazy">
+                <img src="<?= BASE_URL ?>/assets/images/pitxos.jpg" alt="Pintxos calientes al momento" class="hg-img hg-img-calientes" loading="lazy">
                 <div class="hg-overlay">
                     <span class="hg-tag"><?= isEn() ? 'HOT SKEWERS' : 'CALIENTES AL MOMENTO' ?></span>
                     <h4 class="hg-title"><?= isEn() ? 'Foie, brochettes & seasonal bites' : 'Foie fresco, brochetas y cazuelas' ?></h4>
                 </div>
             </div>
             <div class="home-gallery-item hg-item-wide">
-                <img src="https://sagaretxe.net/wp-content/uploads/2023/10/IMG_0581-scaled-1.jpg" alt="Tarta de queso Idiazabal" loading="lazy">
+                <img src="<?= BASE_URL ?>/assets/images/tejas-tolosa-turron.jpg" alt="Tejas de Tolosa con Helado Artesano de Turrón" class="hg-img hg-img-dulce" loading="lazy">
                 <div class="hg-overlay">
-                    <span class="hg-tag"><?= isEn() ? 'POSTRE ARTESANO' : 'TRADICIÓN DULCE' ?></span>
-                    <h4 class="hg-title"><?= isEn() ? 'Creamy Idiazabal Basque cheesecake' : 'Tarta cremosa de queso Idiazábal' ?></h4>
+                    <span class="hg-tag"><?= isEn() ? 'ARTISAN DESSERT' : 'TRADICIÓN DULCE' ?></span>
+                    <h4 class="hg-title"><?= isEn() ? 'Tolosa Tuiles with Artisan Turrón Ice Cream' : 'Tejas de Tolosa con Helado Artesano de Turrón' ?></h4>
                 </div>
             </div>
         </div>
@@ -518,7 +550,7 @@
     <div class="container cta-final-inner-lana">
         <span class="section-subtag-lana"><?= isEn() ? 'WE AWAIT YOU IN CHAMBERÍ' : 'TE ESPERAMOS EN CHAMBERÍ' ?></span>
         <h2 class="cta-final-title-lana">
-            <?= isEn() ? 'Experience the Art of Basque Grilling & Cider' : 'Vive la Auténtica Experiencia del Asador Vasco' ?>
+            <?= isEn() ? 'Experience the Art of Basque Grilling & Cider' : 'Vive la Auténtica Experiencia de la Sidrería Vasca' ?>
         </h2>
         <p class="cta-final-desc-lana">
             <?= isEn() ? 'Book your table online with instant confirmation or visit our pintxos counter on Calle Eloy Gonzalo 26, Madrid.' : 'Reserva tu mesa online con confirmación inmediata o visítanos en nuestra barra de pintxos en Calle Eloy Gonzalo 26, Madrid.' ?>
@@ -530,7 +562,7 @@
             </a>
             <a href="tel:+34914462588" class="btn-lana-outline btn-lg-lana">
                 <i class="fa-solid fa-phone"></i>
-                <span>914 46 25 88</span>
+                <span>914.462.588</span>
             </a>
         </div>
     </div>

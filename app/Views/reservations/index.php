@@ -36,15 +36,13 @@
                     <div class="rg-notice-phones-box">
                         <div class="rg-phones-subline">
                             <span class="rg-phone-kind"><i class="fa-solid fa-phone"></i> <?= isEn() ? 'Landlines:' : 'Teléfonos Fijos:' ?></span>
-                            <a href="tel:+34914462588" class="rg-phone-link highlight">(+34) 914 46 25 88</a>
+                            <a href="tel:+34914462588" class="rg-phone-link highlight">(+34) 914.462.588</a>
                             <span class="rg-phone-sep">//</span>
-                            <a href="tel:+34914456023" class="rg-phone-link">914 45 60 23</a>
+                            <a href="tel:+34914456023" class="rg-phone-link">914.456.023</a>
                         </div>
                         <div class="rg-phones-subline">
-                            <span class="rg-phone-kind"><i class="fa-solid fa-mobile-screen"></i> <?= isEn() ? 'Mobiles / WhatsApp:' : 'Móviles / WhatsApp:' ?></span>
-                            <a href="tel:+34622179060" class="rg-phone-link mobile">622 179 060</a>
-                            <span class="rg-phone-sep">//</span>
-                            <a href="tel:+34633179060" class="rg-phone-link mobile">633 179 060</a>
+                            <span class="rg-phone-kind"><i class="fa-solid fa-mobile-screen"></i> <?= isEn() ? 'Mobile / WhatsApp:' : 'Móvil / WhatsApp:' ?></span>
+                            <a href="tel:+34633179060" class="rg-phone-link mobile">633.179.060</a>
                         </div>
                     </div>
                     <div class="rg-notice-action">
